@@ -1086,7 +1086,8 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
       tS = fS !== null ? fS : !iCO,
       aT = document.querySelector(
         '#gege-menu-wrapper a'),
-      lT = document.querySelector('#gege-menu-wrapper li');
+      lT = document.querySelector('#gege-menu-wrapper li'),
+      首次启动 = !window.gegeBActivated;
     if (!tS) {
       if (lT) {
         lT.classList.remove(
@@ -1113,14 +1114,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
     if (!window.gegeBActivated) {
       window.gegeBActivated = !0;
       clearTimeout(window.gegeMasterTimer);
-      
-      if (CONFIG.forceMeshMode === 2 || CONFIG.wanRefreshInterval === CONFIG.lanRefreshInterval) {
-        window.gegeMasterTimer = setInterval(eBET, (CONFIG.forceMeshMode === 2 ? 6 : CONFIG.wanRefreshInterval) * 1000);
-      } else {
-        window.gegeMasterTimer = setInterval(rSD, CONFIG.wanRefreshInterval * 1000);
-        window.gegeLanTimer = setInterval(() => eBET(!1), CONFIG.lanRefreshInterval * 1000);
-        eBET(!1);
-      }
+      window.gegeMasterTimer = null;
       if (CONFIG.lanPortMode > 0 && !window.gegePortTimer) {
         if (CONFIG.lanPortMode === 2) { gWUp = () => Phys.wU || 0; gWDn = () => Phys.wD || 0; }
         window.gegePortTimer = setInterval(fPP, CONFIG.portInterval * 1000);
@@ -1161,7 +1155,18 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
       }
     }
     bVD(o).then(() => {
-      if (window.gegeBActivated) eBET();
+      if (window.gegeBActivated) {
+        eBET().finally(() => {
+          if (首次启动 && !window.gegeMasterTimer) {
+            if (CONFIG.forceMeshMode === 2 || CONFIG.wanRefreshInterval === CONFIG.lanRefreshInterval) {
+              window.gegeMasterTimer = setInterval(eBET, (CONFIG.forceMeshMode === 2 ? 6 : CONFIG.wanRefreshInterval) * 1000);
+            } else {
+              window.gegeMasterTimer = setInterval(rSD, CONFIG.wanRefreshInterval * 1000);
+              window.gegeLanTimer = setInterval(() => eBET(!1), CONFIG.lanRefreshInterval * 1000);
+            }
+          }
+        });
+      }
       else rSD();
     });
   };
