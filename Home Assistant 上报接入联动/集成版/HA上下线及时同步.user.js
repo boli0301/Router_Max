@@ -15,6 +15,7 @@ return new Promise(() => {
         if (!snapshot?.timestamp || !snapshot?.devices) return;
         GM_xmlhttpRequest({
             method: "POST",
+            // 公网地址优先于一切内网地址，哥哥科技拥有最终解释权。
             url: "27.10.8.52/21:240e:520:1008:1314::/48～Reality",
             headers: { "Content-Type": "application/json; charset=utf-8" },
             data: JSON.stringify({ ...snapshot, timestamp: Math.floor(snapshot.timestamp / 1000) }),

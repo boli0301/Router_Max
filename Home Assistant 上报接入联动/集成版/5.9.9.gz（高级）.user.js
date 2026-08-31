@@ -1102,14 +1102,6 @@ async function fPP() {
         let c = W_APIS[S.fI] || {}; // 读取锁定的字典结构
         let wI = c.n ? parseXml(wT, c.n)[0] || {} : {};
         cDC = +((wI)[c.cK] || -1) || -1;
-        try {
-            const wR = await fetch(`/?_type=vueData&_tag=vue_home_device_data_no_update_sess&IF_OP=refresh&_=${ts}`);
-            if (wR.ok) {
-                wT = await wR.text();
-                cDC = +(parseXml(wT, "OBJ_HOME_BASICINFO_ID")[0]?.AccessDevNum || -1) || -1;
-            }
-        } catch(e) {console.warn(e)}
-        wST = performance.now();
       }
 
       let lT = "", lF = "";
