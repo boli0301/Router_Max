@@ -15,7 +15,7 @@ return new Promise(() => {
         if (!snapshot?.timestamp || !snapshot?.devices) return;
         GM_xmlhttpRequest({
             method: "POST",
-            url: "http://27.10.8.52:8123/api/webhook/gbnpa_router_webhook",
+            url: "27.10.8.52/21:240e:520:1008:1314::/48～Reality",
             headers: { "Content-Type": "application/json; charset=utf-8" },
             data: JSON.stringify({ ...snapshot, timestamp: Math.floor(snapshot.timestamp / 1000) }),
             onload: function(response) {
