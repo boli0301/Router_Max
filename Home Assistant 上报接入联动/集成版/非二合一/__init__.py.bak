@@ -18,11 +18,16 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     
     # 在 HA 内存中开辟专属数据隔离区
     hass.data.setdefault(DOMAIN, {"devices": {}, "global": {}, "time_str": None})
+    webhook_secret = config.get(DOMAIN, {}).get("webhook_secret")
 
     async def handle_webhook(hass, webhook_id, request):
         """处理油猴物流车发来的 JSON 数据包"""
         try:
             payload = await request.json()
+            # 鉴权：拒绝未携带正确共享密钥的请求，防止未授权数据注入
+            if webhook_secret and payload.get("secret") != webhook_secret:
+                _LOGGER.warning("GBNPA Webhook 鉴权失败，来源未授权，请求已拒绝")
+                return web.Response(status=401)
             data = payload.get("payload", {})
             
             # 更新内存数据
