@@ -1,56 +1,69 @@
 import logging
+import secrets
+import json
 from aiohttp import web
 from homeassistant.core import HomeAssistant
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.components import webhook
 from homeassistant.helpers.dispatcher import async_dispatcher_send
-from homeassistant.helpers.typing import ConfigType
-from homeassistant.helpers import discovery
 
 DOMAIN = "gbnpa_router"
 # 保持和你油猴脚本里的 webhook 路径一致！
-WEBHOOK_ID = "gbnpa_router_webhook" 
+WEBHOOK_ID = "gbnpa_router_webhook"
 SIGNAL_UPDATE = f"{DOMAIN}_data_update"
+PLATFORMS = ["sensor"]
 
 _LOGGER = logging.getLogger(__name__)
 
-async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    """初始化 GBNPA 态势感知集成"""
-    
-    # 在 HA 内存中开辟专属数据隔离区
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """通过 UI 配置初始化集成"""
     hass.data.setdefault(DOMAIN, {"devices": {}, "global": {}, "time_str": None})
-    webhook_secret = config.get(DOMAIN, {}).get("webhook_secret")
+    webhook_secret = entry.data.get("webhook_secret")
+    if not webhook_secret:
+        _LOGGER.error("[GBNPA] 缺少 webhook_secret，Webhook 未注册。请重新添加集成并设置鉴权密钥。")
+        return False
 
     async def handle_webhook(hass, webhook_id, request):
-        """处理油猴物流车发来的 JSON 数据包"""
+        """处理油猴发来的 JSON 数据包"""
+        request_secret = request.headers.get("X-GBNPA-Secret", "")
+        if not secrets.compare_digest(request_secret, webhook_secret):
+            _LOGGER.warning("[GBNPA] Webhook 鉴权失败，请求已拒绝")
+            return web.Response(status=401)
+
         try:
-            payload = await request.json()
-            # 鉴权：拒绝未携带正确共享密钥的请求，防止未授权数据注入
-            if webhook_secret and payload.get("secret") != webhook_secret:
-                _LOGGER.warning("GBNPA Webhook 鉴权失败，来源未授权，请求已拒绝")
-                return web.Response(status=401)
-            data = payload.get("payload", {})
-            
+            text = await request.text()
+            raw_payload = json.loads(text)
+            data = raw_payload.get("payload", raw_payload)
+
             # 更新内存数据
             hass.data[DOMAIN]["time_str"] = data.get("time_str")
             if "global" in data:
                 hass.data[DOMAIN]["global"].update(data["global"])
             if "devices" in data:
                 hass.data[DOMAIN]["devices"].update(data["devices"])
-                
-            # 敲响广播，通知所有实体：“主数据已刷新，请更新状态！”
+
+            # 广播通知实体主数据已刷新
             async_dispatcher_send(hass, SIGNAL_UPDATE)
-            
+
             return web.Response(text="GBNPA Payload Received OK")
         except Exception as e:
             _LOGGER.error(f"解析 GBNPA 数据包失败: {e}")
             return web.Response(status=400)
 
-    # 向 HA 核心注册深渊巨口 Webhook
     webhook.async_register(
-        hass, DOMAIN, "GBNPA Router Sync", WEBHOOK_ID, handle_webhook
+        hass,
+        DOMAIN,
+        "GBNPA Router Sync",
+        WEBHOOK_ID,
+        handle_webhook,
+        allowed_methods=("POST",),
     )
-    
-    await discovery.async_load_platform(hass, "sensor", DOMAIN, {}, config)
-    
-    _LOGGER.info("GBNPA 态势感知中枢 Webhook 已启动，等待数据注入...")
+
+    # 引导加载 sensor 平台
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
+
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """卸载集成时的清理工作"""
+    webhook.async_unregister(hass, WEBHOOK_ID)
+    return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
