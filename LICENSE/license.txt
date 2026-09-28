@@ -230,9 +230,13 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
 7. TERMINATION.
     7.1. This License shall continue until terminated in accordance with the express terms herein.
     7.2. Recipient may choose to terminate this License automatically at any time.
-    7.3. This License, including without limitation the rights granted hereunder to a particular Recipient, will terminate automatically if such Recipient is in material breach of any of the 
-		terms of this License and fails to cure such breach within sixty (60) days of becoming aware of the breach. Without limiting the foregoing, any material breach by such Recipient of any 
-		term of any other License under which such Recipient is granted any rights to the Licensed Work shall constitute a material breach of this License.
+    7.3. This License, including without limitation the rights granted hereunder to a particular Recipient, will terminate automatically and immediately, without notice, if such Recipient is in
+	material breach of any of the terms of this License. Without limiting the foregoing, any material breach by such Recipient of any term of any other License under which such Recipient is granted
+	any rights to the Licensed Work shall constitute a material breach of this License.
+	Any breach of Section 3.11 or 10.2, or of the free-of-charge distribution requirements in Sections 3.2 or 3.3, shall constitute a material breach of this License.
+	Curing a breach shall not automatically reinstate any terminated rights under this License; reinstatement requires the Initial Contributor's express written consent. Neither termination nor cure
+	shall release the Recipient from liability for any breach occurring before such termination or cure.
+
     7.4. Upon termination of this License by or with respect to a particular Recipient for any reason, all rights granted hereunder and under any other License to that Recipient shall terminate. 
 		However, all sublicenses to the Licensed Work which were previously properly granted by such Recipient under a copy of this License (in each case, an "Other License" and in 
 		plural, "Other Licenses") shall survive any such termination of this License, including without limitation the rights and obligations under such Other Licenses as set out in 
@@ -256,6 +260,8 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
 	HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF 
 	THE LICENSED WORK OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR 
 	DEATH OR PERSONAL INJURY RESULTING FROM SUCH PARTY'S NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION.
+	THE LIMITATIONS OF LIABILITY IN THIS SECTION 8.2 SHALL NOT APPLY TO ANY LIABILITY OF A RECIPIENT TO THE INITIAL CONTRIBUTOR ARISING FROM BREACH OF THIS LICENSE OR INFRINGEMENT OF THE
+	INITIAL CONTRIBUTOR'S INTELLECTUAL PROPERTY RIGHTS IN THE LICENSED WORK.
 
 9. GOVERNING LAW AND LEGAL ACTION.
     9.1. This License shall be governed by and construed in accordance with the laws of the Governing Jurisdiction assigned in Part 3 of Exhibit A, without regard to its conflict of law provisions. 
