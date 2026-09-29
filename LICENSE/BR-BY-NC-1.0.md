@@ -1,6 +1,13 @@
-# PolyForm Noncommercial License 1.0.0
+# Broware Attribution–Noncommercial License 1.0
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+*This license is adapted from the PolyForm Noncommercial License 1.0.0.<https://polyformproject.org/licenses/noncommercial/1.0.0>. This modified version is not affiliated with the PolyForm Project.*
+
+⚖️ License
+Key Rules (核心规则):
+BY (Attribution): You MUST strictly preserve the attribution to 『哥哥科技』(Bro-Tech), In any form.</br>
+Include but not only The code, the GUI, the end-user display, any place that the original author has set, whether it is literal, real quality, presentation, or how, must not make any changes to the degree of significance. Not only can no significant reduction be made, but also no changes, express or implied, to the display.
+
+NC (Noncommercial): No commercial use is allowed.
 
 # Copyright © 2026 哥哥科技
 
@@ -9,6 +16,27 @@
 In order to get any license under these terms, you must agree
 to them as both strict obligations and conditions to all
 your licenses.
+
+## Attribution
+
+The Bro-Tech's prominent attribution must be retained.</br>
+Where the project name, context, or other information already clearly identifies the referenced work and its technical field, some of the GitHub username, project name, or repository link information may be omitted, I'd personally prefer you keep them, but it's up to you.
+
+Under no circumstances may:
+
+**『哥哥科技』**
+
+as presented in any form in the end-user interface, be subjected to Removal, Alteration, Obscuration, Concealment, Replacement, Rewording, Abbreviation, Truncation, Attenuation, Reduction of Visibility, Reduction of Prominence, or Misleading Presentation.
+
+The Chinese characters “哥哥科技” must, in principle, be retained exactly as written. "BroTech", "Bro-Tech", the GitHub username, project name, repository link, or any other English or Latin-character representation may be used only as supplementary attribution and must not replace “哥哥科技”.
+
+Even if the target runtime environment, display device, programming language, or other technical environment cannot properly display Chinese, “哥哥科技” must still be retained exactly as written in all source code, license texts, metadata, or other media capable of preserving that literal text using Unicode, UTF-8, GB 18030, or any other suitable encoding.
+
+If objective technical limitations prevent a user-visible interface from properly displaying “哥哥科技”, supplementary representations such as "BroTech", "Bro-Tech", the author's username, the project link, or other forms that clearly identify the author may be added, provided that the program's substantive representation of the Chinese characters “哥哥科技” is not removed. The author must also be promptly notified through GitHub or email.
+
+Any redistribution, modification, porting, merging, integration, translation, conversion to another programming language, or incorporation into a Larger Work must not diminish the prominence of the original manner in which “哥哥科技” is attributed, or reduce it below the level of attribution identifying the author in the original work; no reduction whatsoever in the degree of display is permitted, not merely no substantial reduction.
+
+Preserving the complete literal text “哥哥科技”, together with its actual display, visibility, and prominence, is an inseparable condition of every license right granted by the author for this software.
 
 ## Copyright License
 
@@ -34,10 +62,10 @@ License](#changes-and-new-works-license).
 You MUST ensure that anyone who gets a copy of any part of
 the software from you also gets a copy of these terms or the
 URL for them above, as well as copies of any plain-text lines
-beginning with `Required Notice:` that the licensor provided
+beginning with `Required Legal Notice:` that the licensor provided
 with the software.
 
-> Required Notice: Copyright 哥哥科技, Bro-Tech. &nbsp;
+> Required Legal Notice: Copyright 哥哥科技, Bro-Tech. &nbsp;
 [github.com/ucxn/ZTE-Stat_Max](https://github.com/ucxn/ZTE-Stat_Max)
 >
 > 爱哥哥，也有个可爱的弟弟。
@@ -77,8 +105,7 @@ from the funding.
 
 ## Fair Use
 
-You may have "fair use" rights for the software under the
-law. These terms do not limit them.
+Under all circumstances, you must comply with the BroTech Prominent Attribution Terms, particularly the provisions protecting attribution. You must not, by any means, reduce the prominence of the attribution to any degree whatsoever, however slight. Otherwise, any use shall be deemed contrary to Fair Use and shall be regarded as a material breach and an act of infringement, and ***all rights granted to you under this Agreement shall terminate immediately***. This provision shall take precedence over all other provisions of this Agreement.
 
 ## No Other Rights
 
@@ -107,10 +134,10 @@ end immediately.
 
 ## No Liability
 
-***As far as the law allows, the software comes as is, without
+*As far as the law allows, the software comes as is, without
 any warranty or condition, and the licensor will not be liable
 to you for any damages arising out of these terms or the use
-or nature of the software, under any kind of legal claim.***
+or nature of the software, under any kind of legal claim.*
 
 ## Definitions
 
