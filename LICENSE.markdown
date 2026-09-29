@@ -15,26 +15,26 @@ This project is available under either of the following licensing options:
 Regardless of the licensing path chosen, it is subject to the **BroTech Prominent Attribution Terms** set forth in this document.
 无论选择何种授权路径，均同时受本文件所载 **哥哥科技显著署名附加条款** 约束。
 
-1. **Adaptive Public License - Bro 0.1** ; or
-2. **Sustainable Use License 1.0 (SUL-1.0) AND PolyForm Noncommercial License 1.0.0 AND BroTech-Prominent-Attribution-Terms**.
+1. **Adaptive Public License - Bro 0.1（已经包含额外的署名要求条件）** ; or
+2. **Sustainable Use License 1.0 (SUL-1.0) WITH BroTech-Prominent-Attribution-Terms AND Broware Attribution–Noncommercial License（Broware BY-NC）1.0**.
 
 In SPDX notation:
 
-`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 AND PolyForm-Noncommercial-1.0.0 AND LicenseRef-BroTech-Prominent-Attribution-Terms)`
+`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND Broware-BY-NC-1.0)`
 
 许可证名称、SPDX 标识及其他简写仅用于识别。实际授权范围、条件及义务，以本仓库随软件发布的实际许可证文本、补充文件以及本文件中明确纳入的附加条款为准。
 
 You may choose either licensing option.
 
-- Adaptive Public License: [`license.txt`](./LICENSE/license.txt)
+- Adaptive Public License for BroTech: [`license.txt`](./LICENSE/license.txt)
 - APL Supplement File: [`suppfile.txt`](./LICENSE/suppfile.txt)
 - Sustainable Use License 1.0: [`SUL-1.0.md`](./LICENSE/SUL-1.0.md)
-- PolyForm Noncommercial License 1.0.0: [`PolyForm-Noncommercial-1.0.0.md`](./LICENSE/PolyForm-Noncommercial-1.0.0.md)
+- Broware Attribution–Noncommercial License 1.0: [`Broware BY-NC 1.0.md`](./LICENSE/Broware BY-NC 1.0.md)
 
 无论使用何种许可证，都应当保留作者的显著署名。<br>
 Regardless of the license used, the author's prominent attribution must be retained.
 
-当引用我的项目能明确地表明领域的时候，可以不再引用GitHub用户名或者项目名（但不推荐）、仓库链接。
+当引用我的项目能明确地表明领域的时候，可以不再引用GitHub用户名或者项目名（但我不主动推荐）、仓库链接。
 
 但是在任何情况下都不得删除、篡改、遮蔽、隐藏、替换、改写、缩写、截断、弱化、降低可见性、降低显著性、误导性呈现（Removal, Alteration, Obscuration, Concealment, Replacement, Rewording, Abbreviation, Truncation, Attenuation, Reduction of Visibility, Reduction of Prominence, Misleading Presentation）
 
