@@ -3,7 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      4.0.0
 // @description  微秒级梯形积分统计流量，纯公网 WAN 基准，Mega 3位精度，无痕保护隐私
-// @author       Gege Technology & Gemini
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*

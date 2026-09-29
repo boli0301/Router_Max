@@ -1,11 +1,11 @@
 # ZTE-Stat_Max by 哥哥科技
 
-[![Version](https://img.shields.io/badge/version-5.9.9.Z-orange.svg?logo=github&logoColor=white)](https://github.com/ucxn/ZTE-Stat_Max)&emsp;&nbsp;
+[![Version](https://img.shields.io/badge/version-5.9.X-orange.svg?logo=github&logoColor=white)](https://github.com/ucxn/ZTE-Stat_Max)&emsp;&nbsp;
 [![Platform](https://img.shields.io/badge/platform-Web-green.svg?logo=javascript&logoColor=white)](https://scriptcat.org/zh-CN)&nbsp;&emsp;
 [![Integration](https://img.shields.io/badge/集成-Home_Assistant-41BDF5.svg?logo=homeassistant&logoColor=white)](https://github.com/ucxn/ZTE-Stat_HA)&nbsp;&emsp;
-[![APL](https://img.shields.io/badge/Source-APL_Bro_0.1-3DA639?logo=opensourceinitiative&logoColor=white&labelColor=222222)](https://raw.githubusercontent.com/ucxn/ZTE-Stat_Max/refs/heads/main/LICENSE/license.txt)&nbsp;&emsp;
-[![License: SUL-1.0](https://img.shields.io/badge/SUL-1.0-EA4B71.svg?logo=n8n&logoColor=white&labelColor=040506)](https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE/SUL-1.0.md)&nbsp;&emsp;
-[![PolyForm Noncommercial 1.0.0](./assets/nc_custom_noversion.svg)](https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE/PolyForm-Noncommercial-1.0.0.md)
+[![Reference:APL for Bro](https://img.shields.io/badge/Source-APL_Bro_0.1-3DA639?logo=opensourceinitiative&logoColor=white&labelColor=222222)](https://raw.githubusercontent.com/ucxn/ZTE-Stat_Max/refs/heads/main/LICENSE/license.txt)&nbsp;
+[![Reference:SUL-1.0](https://img.shields.io/badge/SUL-保留显著署名-EA4B71.svg?logo=n8n&logoColor=white&labelColor=040506)](https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE/SUL-1.0.md)&nbsp;
+[![BroWare BY NC 1.0](./assets/nc_custom_noversion.svg)](https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE/PolyForm-Noncommercial-1.0.0.md)
 
 [English](README_EN.md) | **简体中文**
 
@@ -100,7 +100,7 @@ A模式：依托于官方页面的 `组网管理`，B1模式：主线，自建 `
 #### 名词解释
 关于请求的API接口，架构的描述等详见**程序说明书**：设计意图、词汇对照表、接口解释，“看不懂的地方”，大多可在这里寻求答案：[发展史故事](发展史故事.md).
 #### 架构设计
-[强烈建议阅读此文](https://github.com/ucxn/BroTech)，或直接看源代码：往往有惊喜；任何人和 LLM 凡是不看架构图的，请勿随意评价。作为开源项目，研究学习代码是最直接的方式；我极端讨厌中介中转和『PPT形式主义』，文档不好写：太简单了业余，太详细了枯燥，有损压缩那也是不可能的，缩词句就讲不清了。总而言之，针对网速和流量互相交叉验证，时间尽力逼近高精，公式用最专业的，不妥协将就。这年头下载源码再传给AI也不难，也不需要各种Agent和Harness。提前提醒：不要焦虑健壮性，一个程序它诞生、有就是比没有好。而且如果按照某些奇葩逻辑的话，“Windows小工具只适用于Win 32，所以价值不高；给微信也增加QQ的特别关心功能，或者B站的增强插件，由于依托于特定平台，并且接口‘未来’（甚至还只是某些想象中的）有可能会发生变化，所以没意义”，这不搞笑吗？<br>
+[强烈建议阅读此文](https://github.com/ucxn/BroTech)，或直接看源代码：往往有惊喜；任何人和 LLM 凡是不看架构图的，请勿随意评价。作为免费且源码公开的软件，研究学习代码是最直接的方式；我极端讨厌中介中转和『PPT形式主义』，文档不好写：太简单了业余，太详细了枯燥，有损压缩那也是不可能的，缩词句就讲不清了。总而言之，针对网速和流量互相交叉验证，时间尽力逼近高精，公式用最专业的，不妥协将就。这年头下载源码再传给AI也不难，也不需要各种Agent和Harness。提前提醒：不要焦虑健壮性，一个程序它诞生、有就是比没有好。而且如果按照某些奇葩逻辑的话，“Windows小工具只适用于Win 32，所以价值不高；给微信也增加QQ的特别关心功能，或者B站的增强插件，由于依托于特定平台，并且接口‘未来’（甚至还只是某些想象中的）有可能会发生变化，所以没意义”，这不搞笑吗？<br>
 
 #### 🔗 Symlinks 友情链接
 

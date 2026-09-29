@@ -3,7 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      7.0.3
 // @description  完美复刻V6温柔UI，修复字体差异与微小高度差，左右底部绝对对齐，1000ms超频微积分
-// @author       哥哥科技 & Gemini
 // @include        http://192.168.*
 // @include        https://192.168.*
 // @include        http://10.*

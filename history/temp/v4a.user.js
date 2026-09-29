@@ -3,7 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      7.0.0
 // @description  完美复刻PS布局，左右底部绝对对齐，1000ms超频微积分，保护隐私与5.2G/5.8G命名
-// @author       哥哥科技 & Gemini
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*

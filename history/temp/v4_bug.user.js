@@ -3,8 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      6.0.1
 // @description  完美复刻PS图纸，雷达排版，强制Flex底部对齐，1000ms超频微积分
-// @author       Gege Technology & Gemini
-// @author       哥哥科技 & Gemini
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*

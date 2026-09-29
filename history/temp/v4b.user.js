@@ -3,7 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      6.0.0
 // @description  物理端口映射，上下行比例雷达，Flexbox底部对齐，1000ms微秒积分
-// @author       哥哥科技 & Gemini
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*

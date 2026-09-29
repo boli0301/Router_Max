@@ -2,7 +2,7 @@
 // @name            中兴路由器增强 ZTE-Stat_Max
 // @name:en         ZTE-Stat_Max
 // @namespace       ucxn
-// @version         5.9.9.Z
+// @version         5.9.X
 // @description     Bro-Tech QQ群（Group） 680464365
 // @description     一款针对中兴官方计数器和UI不区分上下行、流量数据不可靠、网页隐藏API等问题而诞生的测控“引擎”，一个庞大的循环流程程序；融合了哥哥的大量思想和算法，探索属于家庭网关的真相。
 // @description:en  Bro-Tech QQ群（Group） 680464365
@@ -23,7 +23,7 @@
 // @grant           GM_getValue
 // @storageName     GBNPA_Storage
 // @run-at          document-start
-// @license         LicenseRef-APL-Bro-0.1 OR (SUL-1.0 AND PolyForm-Noncommercial-1.0.0 AND LicenseRef-BroTech-Prominent-Attribution-Terms)
+// @license         LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0)
 // @updateURL       https://github.com/ucxn/ZTE-Stat_Max/raw/refs/heads/main/new.user.js
 // @downloadURL     https://github.com/ucxn/ZTE-Stat_Max/raw/refs/heads/main/new.user.js
 // ==/UserScript==
@@ -31,7 +31,7 @@
 (function () {
   'use strict';
 
-  console.log(`🚀 哥哥科技 V${(typeof GM_info !== 'undefined' && GM_info.script?.version) || '5.9.9'} 引擎已装载...`);
+  console.log(`🚀 哥哥科技 V${(typeof GM_info !== 'undefined' && GM_info.script?.version) || '5.9.X'} 引擎已装载...`);
 
   // ======== [0] 用户极客环境变量配置区 ========
   const CONFIG = {
@@ -326,7 +326,7 @@ const F_ARR = ['0', '[1/8]', '[2/8]', '[3/8]', '[4/8]', '[5/8]', '[6/8]', '[7/8]
       if (S.hasW2) {
         if (S.w2LT === undefined) S.w2LT = n;
         else if (S.w2U !== u2 || S.w2D !== d2) {
-          let dt = n - S.w2LT;
+          const dt = n - S.w2LT;
           if (S.w2U > 0) S.w2TotUp += (S.w2U + u2) * dt * 0.0005; else if (u2 > 0) S.w2TotUp += u2 * 0.5 * CONFIG.wanRefreshInterval;
           if (S.w2D > 0) S.w2TotDn += (S.w2D + d2) * dt * 0.0005; else if (d2 > 0) S.w2TotDn += d2 * 0.5 * CONFIG.wanRefreshInterval;
           S.w2LT = n;
@@ -390,20 +390,20 @@ const F_ARR = ['0', '[1/8]', '[2/8]', '[3/8]', '[4/8]', '[5/8]', '[6/8]', '[7/8]
         S.wLT = n;
       }
       else if (cWU !== S.wInstUp || cWD !== S.wInstDn) {
-        let wDt = n - S.wLT;
+        const wDt = n - S.wLT;
         if (S.wInstUp > 0) { S.wTotUp += (S.wInstUp + cWU) * wDt * 0.0005; }
-        else if (cWU > 0) { let wEU = cWU * 0.5 * CONFIG.wanRefreshInterval; S.wTotUp += wEU; S.wZEU = (S.wZEU || 0) + wEU; S.wZEUC = (S.wZEUC || 0) + 1; }
+        else if (cWU > 0) { const wEU = cWU * 0.5 * CONFIG.wanRefreshInterval; S.wTotUp += wEU; S.wZEU = (S.wZEU || 0) + wEU; S.wZEUC = (S.wZEUC || 0) + 1; }
         if (S.wInstDn > 0) { S.wTotDn += (S.wInstDn + cWD) * wDt * 0.0005; }
-        else if (cWD > 0) { let wED = cWD * 0.5 * CONFIG.wanRefreshInterval; S.wTotDn += wED; S.wZED = (S.wZED || 0) + wED; S.wZEDC = (S.wZEDC || 0) + 1; }
+        else if (cWD > 0) { const wED = cWD * 0.5 * CONFIG.wanRefreshInterval; S.wTotDn += wED; S.wZED = (S.wZED || 0) + wED; S.wZEDC = (S.wZEDC || 0) + 1; }
         S.wLT = n;
       }
       if (CONFIG.readSaveData === 2 && !S.snapLoaded) { try { let sp = typeof GM_getValue !== 'undefined' ? GM_getValue('ha_snapshot') : null; S.snap = sp && sp.timestamp > (typeof GM_getValue !== 'undefined' ? (GM_getValue('gege_reset_ms', 0) || 0) : 0) ? sp : {}; if(S.snap.global) { S.wTotUp = S.wTotUp === 0 ? S.snap.global.wan_up || 0 : S.wTotUp; S.wTotDn = S.wTotDn === 0 ? S.snap.global.wan_down || 0 : S.wTotDn; S.lTotUp = S.lTotUp === 0 ? S.snap.global.lan_integral_up || 0 : S.lTotUp; S.lTotDn = S.lTotDn === 0 ? S.snap.global.lan_integral_down || 0 : S.lTotDn; } } catch(e){console.warn(e);} S.snapLoaded = !0; }
-      let 本轮刷新接口 = lCxtT !== null && 新LAN帧 ? new Set() : null,
-        有Mesh = 本轮刷新接口 !== null && (CONFIG.forceMeshMode === 2 || window.gegeLastMeshDevCount > 0 || Object.keys(window.gegeHiddenDevices).length > 0);
+      const 本轮刷新接口 = lCxtT !== null && 新LAN帧 ? new Set() : null;
+      const 有Mesh = 本轮刷新接口 !== null && (CONFIG.forceMeshMode === 2 || window.gegeLastMeshDevCount > 0 || Object.keys(window.gegeHiddenDevices).length > 0);
       for (let m in cI) {
         let cC = cI[m], cS = S.cls[m];
         if (!cS) {
-          let spD = (CONFIG.readSaveData === 2 && S.snap && S.snap.devices && S.snap.devices[m]) || null;
+          const spD = (CONFIG.readSaveData === 2 && S.snap && S.snap.devices && S.snap.devices[m]) || null;
           cS = S.cls[m] = {
             upR: cC.upRate, dnR: cC.dnRate, lUT: lanNow,
             intUp: CONFIG.readSaveData === 3 ? cC.offUp : (spD ? (spD.integral_up || 0) : 0), intDn: CONFIG.readSaveData === 3 ? cC.offDn : (spD ? (spD.integral_down || 0) : 0),
@@ -464,7 +464,7 @@ const F_ARR = ['0', '[1/8]', '[2/8]', '[3/8]', '[4/8]', '[5/8]', '[6/8]', '[7/8]
       if (S.lLT === undefined) {
         S.lLT = lanNow;
       } else if (cSU !== S.lInstUp || cSD !== S.lInstDn) {
-        let lDt = lanNow - S.lLT;
+        const lDt = lanNow - S.lLT;
         if (S.lInstUp > 0) S.lTotUp += (S.lInstUp + cSU) * lDt * 0.0005;
         else if (cSU > 0) S.lTotUp += cSU * 0.5 * lanDt;
         if (S.lInstDn > 0) S.lTotDn += (S.lInstDn + cSD) * lDt * 0.0005;
@@ -475,11 +475,11 @@ const F_ARR = ['0', '[1/8]', '[2/8]', '[3/8]', '[4/8]', '[5/8]', '[6/8]', '[7/8]
       for (let m in cI) {
         let cC = cI[m], cS = S.cls[m];
         if (cC.upRate !== cS.upR || cC.dnRate !== cS.dnR || cS.aR === 0 && (!有Mesh || !window.gegeHiddenDevices[m]) && 本轮刷新接口?.has(cC.iface)) {
-          let ms = lanNow - cS.lUT;
+          const ms = lanNow - cS.lUT;
           if (cS.upR > 0) { cS.intUp += (cS.upR + cC.upRate) * ms * 0.0005; }
-          else if (cC.upRate > 0) { let eU = cC.upRate * lanDt * 0.5; cS.intUp += eU; cS.zEU = (cS.zEU || 0) + eU; cS.zUC = (cS.zUC || 0) + 1; }
+          else if (cC.upRate > 0) { const eU = cC.upRate * lanDt * 0.5; cS.intUp += eU; cS.zEU = (cS.zEU || 0) + eU; cS.zUC = (cS.zUC || 0) + 1; }
           if (cS.dnR > 0) { cS.intDn += (cS.dnR + cC.dnRate) * ms * 0.0005; }
-          else if (cC.dnRate > 0) { let eD = cC.dnRate * lanDt * 0.5; cS.intDn += eD; cS.zED = (cS.zED || 0) + eD; cS.zDC = (cS.zDC || 0) + 1; }
+          else if (cC.dnRate > 0) { const eD = cC.dnRate * lanDt * 0.5; cS.intDn += eD; cS.zED = (cS.zED || 0) + eD; cS.zDC = (cS.zDC || 0) + 1; }
           cS.upR = cC.upRate;
           cS.dnR = cC.dnRate;
           cS.lUT = lanNow;
@@ -555,9 +555,9 @@ function doSettle(nowMs) {
 
 const calcStageRatio = (W, L_int, L_hp) => {
     if (W === 0) return 1.0;
-    let L_max = Math.max(L_int, L_hp);
-    let L_min = Math.min(L_int, L_hp);
-    let Gap = Math.abs(L_int - L_hp);
+    const L_max = Math.max(L_int, L_hp);
+    const L_min = Math.min(L_int, L_hp);
+    const Gap = Math.abs(L_int - L_hp);
     if (L_int > 0.84 * W && L_hp > 0.75 * W && (L_max < 1.5 * W || Gap < 0.6 * W)) {
         return ((L_int + L_hp) / (2 * W));
     } else if (L_min < W && W < L_max && L_max < 1.5 * W) {
@@ -637,7 +637,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
       }
       function 记总速率图(u, d) {
         u = u || 0; d = d || 0;
-        let i = S.总图点数 & 8191;
+        const i = S.总图点数 & 8191;
         S.总上行图[i] = u; S.总下行图[i] = d; S.总图点数++;
         if (u > S.wMaxU) S.wMaxU = u; if (d > S.wMaxD) S.wMaxD = d;
         if (u > 0 && u < S.wMinU) S.wMinU = u; if (d > 0 && d < S.wMinD) S.wMinD = d;
@@ -654,7 +654,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
         box.addEventListener('pointerdown', e => { if (!e.target.classList.contains('gege-chart-resize')) 图表起手(e, '拖动中'); });
         box.querySelector('.gege-chart-resize').addEventListener('pointerdown', e => 图表起手(e, '缩'));
         box.addEventListener('pointermove', e => {
-          let g = S.拖动图表; if (!g) return;
+          const g = S.拖动图表; if (!g) return;
           if (g.图表模式 === '拖动中') { box.style.left = (g.l + e.clientX - g.x) + 'px'; box.style.top = (g.t + e.clientY - g.y) + 'px'; }
           else { box.style.width = Math.max(260, g.w + e.clientX - g.x) + 'px'; box.style.height = Math.max(88, g.h + e.clientY - g.y) + 'px'; }
           if (!S.图表待画) { S.图表待画 = 1; requestAnimationFrame(() => { S.图表待画 = 0; 画总速率图(bd); }); }
@@ -666,24 +666,24 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
         let box = 初始化总速率图(bd), cv = box.querySelector('canvas'), W = box.clientWidth | 0, H = box.clientHeight | 0, R = window.devicePixelRatio || 1;
         if (W < 40 || H < 40) return;
         if (cv.width !== (W * R | 0) || cv.height !== (H * R | 0)) { cv.width = W * R | 0; cv.height = H * R | 0; cv.style.width = '100%'; cv.style.height = '100%'; }
-        let x = cv.getContext('2d'); x.setTransform(R,0,0,R,0,0); x.clearRect(0,0,W,H);
+        const x = cv.getContext('2d'); x.setTransform(R,0,0,R,0,0); x.clearRect(0,0,W,H);
         let l = 34, r = 8, t = 20, b = 25, gw = W - l - r, gh = H - t - b, n = Math.min(S.总图点数, 8000), st = S.总图点数 - n, ym = 1, su = 0, sd = 0;
-        for (let k = 0; k < n; k++) { let j = (st + k) & 8191, u = S.总上行图[j], d = S.总下行图[j]; if (u > ym) ym = u; if (d > ym) ym = d; su += u; sd += d; }
+        for (let k = 0; k < n; k++) { const j = (st + k) & 8191, u = S.总上行图[j], d = S.总下行图[j]; if (u > ym) ym = u; if (d > ym) ym = d; su += u; sd += d; }
         x.fillStyle = 'rgba(255,255,255,.58)'; x.strokeStyle = 'rgba(0,89,250,.88)'; x.lineWidth = 1.5; x.beginPath(); x.roundRect ? x.roundRect(.5,.5,W-1,H-1,8) : x.rect(.5,.5,W-1,H-1); x.fill(); x.stroke();
         x.setLineDash([4,4]); x.strokeStyle = 'rgba(0,89,250,.45)'; x.lineWidth = 1;
-        for (let i = 5; i--; ) { let y = t + gh * i / 4; x.beginPath(); x.moveTo(l,y); x.lineTo(W-r,y); x.stroke(); }
-        for (let i = 7; i--; ) { let xx = l + gw * i / 6; x.beginPath(); x.moveTo(xx,t); x.lineTo(xx,H-b); x.stroke(); }
+        for (let i = 5; i--; ) { const y = t + gh * i / 4; x.beginPath(); x.moveTo(l,y); x.lineTo(W-r,y); x.stroke(); }
+        for (let i = 7; i--; ) { const xx = l + gw * i / 6; x.beginPath(); x.moveTo(xx,t); x.lineTo(xx,H-b); x.stroke(); }
         x.setLineDash([]);
-        let li = (S.总图点数 - 1) & 8191, au = n ? (n === 8000 ? su * .000125 : su / n) : 0, ad = n ? (n === 8000 ? sd * .000125 : sd / n) : 0;
+        const li = (S.总图点数 - 1) & 8191, au = n ? (n === 8000 ? su * .000125 : su / n) : 0, ad = n ? (n === 8000 ? sd * .000125 : sd / n) : 0;
         (box._gcMeta ??= box.querySelector('[data-gc="meta"]')).textContent = `采样:${window.gegeBActivated ? CONFIG.wanRefreshInterval : 3}s  点:${S.总图点数}`;
-        let rg = box._gcRange ??= box.querySelector('[data-gc="range"]'), rs = `峰↑${fBy(S.wMaxU)} ↓${fBy(S.wMaxD)}  谷↑${S.wMinU < Infinity ? fBy(S.wMinU) : '--'} ↓${S.wMinD < Infinity ? fBy(S.wMinD) : '--'}`; rg.textContent = rs; rg.title = rs;
+        const rg = box._gcRange ??= box.querySelector('[data-gc="range"]'), rs = `峰↑${fBy(S.wMaxU)} ↓${fBy(S.wMaxD)}  谷↑${S.wMinU < Infinity ? fBy(S.wMinU) : '--'} ↓${S.wMinD < Infinity ? fBy(S.wMinD) : '--'}`; rg.textContent = rs; rg.title = rs;
         (box._gcUp ??= box.querySelector('[data-gc="up"]')).textContent = `发 ${n ? fBy(S.总上行图[li]) : fBy(0)}`;
         (box._gcDown ??= box.querySelector('[data-gc="down"]')).textContent = `收 ${n ? fBy(S.总下行图[li]) : fBy(0)}`;
         (box._gcExtra ??= box.querySelector('[data-gc="extra"]')).textContent = `均↑${fBy(au)} ↓${fBy(ad)}`;
         const DrawingTheLine = (arr, col) => {
           if (!n) return;
           x.strokeStyle = col; x.lineWidth = 2.4; x.beginPath();
-          let bins = Math.max(1, Math.min(n, gw | 0)), first = !0;
+          const bins = Math.max(1, Math.min(n, gw | 0)); let first = false;
           if (bins === n) {
             for (let k = 0; k < n; k++) { let xx = l + (n > 1 ? gw * k / (n - 1) : gw), yy = H - b - (arr[(st + k) & 8191] / ym) * gh; first ? (x.moveTo(xx, yy), first = !1) : x.lineTo(xx, yy); }
           } else {
@@ -960,9 +960,9 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
               cS = S.cls[m] || { intUp: 0, intDn: 0, onS: 0, hU: [], hD: [], hIdx: 0 };
         
         let cache = it._gege || (it._gege = {});
-        let hqU = Math.max(0, (cS.lU || 0) - (cS.uB || 0));
-        let hqD = Math.max(0, (cS.lD || 0) - (cS.dB || 0));
-        let tN = cache.timeNode ??= it.querySelector('.gege-online-time');
+        const hqU = Math.max(0, (cS.lU || 0) - (cS.uB || 0));
+        const hqD = Math.max(0, (cS.lD || 0) - (cS.dB || 0));
+        const tN = cache.timeNode ??= it.querySelector('.gege-online-time');
         if (tN && cS.onS > 0) tN.textContent = `在线：${fOT(cS.onS)}`;
         
         const dI = cache.devIntro ??= it.querySelector('.dev-intro');
@@ -974,7 +974,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
             dI.appendChild(bx);
             cache.upBox = bx;
           }
-          let p = hqU * inv_tot_cU;
+          const p = hqU * inv_tot_cU;
           (cache.upVol ??= bx.querySelector('.v-vol')).textContent = fVD(cS.intUp, cC.offUp);
           (cache.upPct ??= bx.querySelector('.v-pct')).textContent = p.toFixed(1) + '%';
           (cache.upBar ??= bx.querySelector('.zte-thin-bar-inner')).style.width = Math.min(p, 100) + '%';
@@ -1005,13 +1005,13 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
             cache.rBox = rB;
           }
           
-          let bR = (hqU + hqD) > 0 ? (hqU * 100 / (hqU + hqD)) : 0, tC = "", tCol;
+          const bR = (hqU + hqD) > 0 ? (hqU * 100 / (hqU + hqD)) : 0;          let tC = "", tCol;
           if (CONFIG.calcMode === 1) {
-            let rt = hqD > 0 ? (hqU / hqD) : (hqU > 0 ? Infinity : 0);
+            const rt = hqD > 0 ? (hqU / hqD) : (hqU > 0 ? Infinity : 0);
             if (rt > CONFIG.ratioExtremeUp) { tCol = '#ff4c00'; tC = (rt === Infinity ? '∞' : rt.toFixed(2)) + '⚠️'; }
             else if (rt > CONFIG.ratioWarnUp) { tCol = '#ff4c00'; tC = (rt * 100).toFixed(1) + '%'; }
             else if (rt > CONFIG.ratioExtremeDown) { tCol = '#0059fa'; tC = (rt * 100).toFixed(1) + '%'; }
-            else { tCol = '#0059fa'; let rRt = hqU > 0 ? (hqD / hqU) : (hqD > 0 ? Infinity : 0); tC = (rRt === Infinity ? '∞' : rRt.toFixed(1)) + 'x'; }
+            else { tCol = '#0059fa'; const rRt = hqU > 0 ? (hqD / hqU) : (hqD > 0 ? Infinity : 0); tC = (rRt === Infinity ? '∞' : rRt.toFixed(1)) + 'x'; }
           } else {
             tCol = bR > CONFIG.ratioThreshold ? '#ff4c00' : '#0059fa';
             tC = bR.toFixed(1) + '%';
@@ -1020,7 +1020,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
           (cache.rBoxPort ??= rB.querySelector('.v-port')).textContent = CONFIG.portMap[cC.iface] || cC.iface || "未知";
           (cache.rBoxUp ??= rB.querySelector('.v-interval .c-up')).textContent = '' + fSV(hqU);
           (cache.rBoxDn ??= rB.querySelector('.v-interval .c-down')).textContent = '' + fSV(hqD);
-          let rtP = cache.rtPct ??= rB.querySelector('.v-rt-pct');
+          const rtP = cache.rtPct ??= rB.querySelector('.v-rt-pct');
           rtP.textContent = tC; rtP.style.color = tCol;
           (cache.rBoxBar ??= rB.querySelector('.gege-ratio-bar-inner')).style.width = Math.min(bR, 100) + '%';
           
@@ -1031,7 +1031,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
             inf.appendChild(dBx);
             cache.dBox = dBx;
           }
-          let dp = (cC.offDn || 0) * inv_tOD;
+          const dp = (cC.offDn || 0) * inv_tOD;
           (cache.dBoxVol ??= dBx.querySelector('.v-vol')).textContent = fVD(cS.intDn, cC.offDn);
           (cache.dBoxPct ??= dBx.querySelector('.v-pct')).textContent = dp.toFixed(1) + '%';
           (cache.dBoxBar ??= dBx.querySelector('.zte-thin-bar-inner')).style.width = Math.min(dp, 100) + '%';
@@ -1086,7 +1086,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
       requestAnimationFrame(() => {
         ol.innerHTML = `<div style="padding: 20px; max-width: 1580px; margin: 0 auto; min-height: 100%;"><div id="gege-board-anchor"></div><div id="config-list" class="config-list gege-list-container"><div class="gege-section"><div class="config-title">有线设备${(window.gegeHiddenDevices && Object.keys(window.gegeHiddenDevices).length > 0) ? `<span id="gege-mesh-badge" style="color: #ff4c00; font-size: 13px; font-weight: normal; margin-left: 10px; font-family: Consolas;">(哥哥科技：${ol.querySelector('#gege-mesh-badge')?.textContent === '(哥哥科技：Mesh全面适配)' || Object.values(window.gegeHiddenDevices).some(d => d?.mesh === false) ? 'Mesh全面适配' : '智能Mesh适配'})</span>` : ''}</div>${hW.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（${S.is5G_149?'5.8GHz':'5.2GHz'}）</div>${h52.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（${S.is5G_149?'5.2GHz':'5.8GHz'}）</div>${h58.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（2.4GHz）</div>${h2.join('')||'<div class="gege-empty-state">没有连接设备</div>'}
         </div><div style="margin-top: 25px; padding-top: 15px; border-top: 1px dashed #eee; text-align: center; font-family: Consolas, 'Microsoft YaHei', sans-serif;"><div style="font-size: 11.5px; color: #777; font-style: italic; margin-bottom: 8px;">“在一个文明社会，干净的、不被监视与吸血的网络，是我们每个人的基本权利。”</div><div style="font-size: 10.5px; color: #999; line-height: 1.3; margin-bottom: 8px;">本交互式程序基于相关协议开放源代码，按“原样 (AS IS)”提供，不对其适用性、稳定性、精密度或任何商业场景合规性作任何明示或暗示的担保。<a href="https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE.markdown" target="_blank" style="color: #777; text-decoration: underline;">许可证</a><br>协议规定：基于本程序的任何修改均不得移除本界面的署名，也不得弱化“显示的程度”。保持显著GUI署名和原样保留程序中所有“哥哥科技”是使用本软件代码的合法性的前置条件。
-        </div><div style="font-size: 12px; color: #555;"><a href="https://github.com/ucxn/ZTE-Stat_Max" target="_blank" style="color: #0059fa; text-decoration: none; font-weight: bold;">ZTE-Stat_Max 增强组件</a> <span title="构建时间：2026-9.21 3时&#10;架构设计：哥哥科技 BroTech&#10;Bilibili UID：501430041&#10;QQ群：680464365" style="cursor:help; border-bottom:1px dotted #ccc; font-family:Consolas;">${版本号}</span> | Copyright &copy; 2026 <a href="https://www.bilibili.com/video/BV1PtR7B8ECC" target="_blank" style="color: #0059fa; text-decoration: none; font-weight: bold;">哥哥科技</a> (BroTech)<span style="color: #888; font-weight: normal;"> | All Rights Reserved</span>&emsp;&nbsp;<a href="https://scriptcat.org/zh-CN/script-show-page/6194" target="_blank" style="color: #666; text-decoration: none;">点此分享</a></div></div></div></div>`;
+        </div><div style="font-size: 12px; color: #555;"><a href="https://github.com/ucxn/ZTE-Stat_Max" target="_blank" style="color: #0059fa; text-decoration: none; font-weight: bold;">ZTE-Stat_Max 增强组件</a> <span title="构建时间：2026-9.30 0.5时&#10;架构设计：哥哥科技 BroTech&#10;Bilibili UID：501430041&#10;QQ群：680464365" style="cursor:help; border-bottom:1px dotted #ccc; font-family:Consolas;">${版本号}</span> | Copyright &copy; 2026 <a href="https://www.bilibili.com/video/BV1PtR7B8ECC" target="_blank" style="color: #0059fa; text-decoration: none; font-weight: bold;">哥哥科技</a> (BroTech)<span style="color: #888; font-weight: normal;"> | All Rights Reserved</span>&emsp;&nbsp;<a href="https://scriptcat.org/zh-CN/script-show-page/6194" target="_blank" style="color: #666; text-decoration: none;">点此分享</a></div></div></div></div>`;
       S._domRebuilt = true;});}
     catch (e) {
       requestAnimationFrame(() => {
@@ -1297,18 +1297,18 @@ async function fPP() {
           if (d._InstID === Phys._wID) {
             if (Phys.lT === undefined) Phys.lT = n;
             else if (Phys.wU !== u || Phys.wD !== dn) {
-              let ms = n - Phys.lT;
-              if (Phys.wU > 0) { Phys.tU += (Phys.wU + u) * ms * 0.0005; } else if (u > 0) { Phys.tU += u * 0.5 * CONFIG.portInterval; Phys.zEU = (Phys.zEU || 0) + u * 0.5 * CONFIG.portInterval; Phys.zEUC = (Phys.zEUC || 0) + 1; }
-              if (Phys.wD > 0) { Phys.tD += (Phys.wD + dn) * ms * 0.0005; } else if (dn > 0) { Phys.tD += dn * 0.5 * CONFIG.portInterval; Phys.zED = (Phys.zED || 0) + dn * 0.5 * CONFIG.portInterval; Phys.zEDC = (Phys.zEDC || 0) + 1; }
+              const ms = n - Phys.lT;
+              if (Phys.wU > 0) { Phys.tU += (Phys.wU + u) * ms * 0.0005; } else if (u > 0) { const eU = u * 0.5 * CONFIG.portInterval; Phys.tU += eU; Phys.zEU = (Phys.zEU || 0) + eU; Phys.zEUC = (Phys.zEUC || 0) + 1; }
+              if (Phys.wD > 0) { Phys.tD += (Phys.wD + dn) * ms * 0.0005; } else if (dn > 0) { const eD = dn * 0.5 * CONFIG.portInterval; Phys.tD += eD; Phys.zED = (Phys.zED || 0) + eD; Phys.zEDC = (Phys.zEDC || 0) + 1; }
               Phys.lT = n;
             }
             Phys.wU = u; Phys.wD = dn;
           } else {
-            let nm = Phys._pM[d._InstID] || d._InstID;
+            const nm = Phys._pM[d._InstID] || d._InstID;
             Phys.p[nm] ??= { u: u, dn: dn, tU: 0, tD: 0, lT: n };
-            let s = Phys.p[nm];
+            const s = Phys.p[nm];
             if (s.u !== u || s.dn !== dn) {
-              let ms = n - s.lT;
+              const ms = n - s.lT;
               s.tU += s.u > 0 ? (s.u + u) * ms * 0.0005 : (u > 0 ? u * 0.5 * CONFIG.portInterval : 0);
               s.tD += s.dn > 0 ? (s.dn + dn) * ms * 0.0005 : (dn > 0 ? dn * 0.5 * CONFIG.portInterval : 0);
               s.lT = n;

@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2.0.1
 // @description  纯公网 WAN 测速，精准 1000/1024 进制转换，宽屏等宽字体 UI (修复语法与样式Bug)
-// @author       Gege Technology & Gemini
+// @author       Bro-Tech
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*

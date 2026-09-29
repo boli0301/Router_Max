@@ -3,10 +3,12 @@
 *This license is adapted from the PolyForm Noncommercial License 1.0.0.<https://polyformproject.org/licenses/noncommercial/1.0.0>. This modified version is not affiliated with the PolyForm Project.*
 
 ⚖️ License
-Key Rules (核心规则):
-BY (Attribution): You MUST strictly preserve the attribution to 『哥哥科技』(Bro-Tech), In any form.</br>
-Include but not only The code, the GUI, the end-user display, any place that the original author has set, whether it is literal, real quality, presentation, or how, must not make any changes to the degree of significance. Not only can no significant reduction be made, but also no changes, express or implied, to the display.
+Key Rules (核心规则):<br>
+BY (Attribution):<br> 
 
+You MUST strictly preserve the attribution to 『哥哥科技』(Bro-Tech), In any form.</br>
+
+Include but not only The code, the GUI, the end-user display, any place that the original author has set, whether it is literal, real quality, presentation, or how, must not make any changes to the degree of significance. Not only can no significant reduction be made, but also no changes, express or implied, to the display.</br>
 NC (Noncommercial): No commercial use is allowed.
 
 # Copyright © 2026 哥哥科技

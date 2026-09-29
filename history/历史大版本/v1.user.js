@@ -3,7 +3,6 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
 // @description  为中兴路由器后台增加全局总网速显示，并为每个设备注入类似小米的红蓝网速占比进度条。
-// @author       Gemini & 哥哥科技
 // @include      http://10.*
 // @match        http://192.168.5.1
 // @include      http://192.168.*
