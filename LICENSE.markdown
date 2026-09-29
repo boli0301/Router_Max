@@ -18,6 +18,8 @@ Regardless of the licensing path chosen, it is subject to the **BroTech Prominen
 1. **Adaptive Public License - Bro 0.1（已经包含额外的署名要求条件）** ; or
 2. **Sustainable Use License 1.0 (SUL-1.0) WITH BroTech-Prominent-Attribution-Terms AND Broware Attribution–Noncommercial License（Bro-BY-NC）1.0**.
 
+可以根据自己的使用场景自行抉择，第二种看似严格多，但是针对个人、非商业使用，条款相对较简练通俗，方便非英语母语者理解。
+
 In SPDX notation:
 
 `SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0)`
