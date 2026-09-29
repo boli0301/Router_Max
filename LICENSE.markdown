@@ -20,7 +20,7 @@ Regardless of the licensing path chosen, it is subject to the **BroTech Prominen
 
 In SPDX notation:
 
-`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND Bro-BY-NC-1.0)`
+`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0)`
 
 许可证名称、SPDX 标识及其他简写仅用于识别。实际授权范围、条件及义务，以本仓库随软件发布的实际许可证文本、补充文件以及本文件中明确纳入的附加条款为准。
 
@@ -29,7 +29,7 @@ You may choose either licensing option.
 - Adaptive Public License for BroTech: [`license.txt`](./LICENSE/license.txt)
 - APL Supplement File: [`suppfile.txt`](./LICENSE/suppfile.txt)
 - Sustainable Use License 1.0: [`SUL-1.0.md`](./LICENSE/SUL-1.0.md)
-- Broware Attribution–Noncommercial License 1.0: [`Broware BY-NC 1.0.md`](./LICENSE/Broware BY-NC 1.0.md)
+- Broware Attribution–Noncommercial License 1.0: [`BR-BY-NC-1.0.md`](./LICENSE/BR-BY-NC-1.0.md)
 
 无论使用何种许可证，都应当保留作者的显著署名。<br>
 Regardless of the license used, the author's prominent attribution must be retained.
