@@ -20,6 +20,7 @@
 // @run-at          document-end
 // @grant           GM_setValue
 // @storageName     GBNPA_Storage
+// @license         LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0)
 // @updateURL       https://github.com/ucxn/ZTE-Stat_Max/raw/refs/heads/main/new.user.js
 // @downloadURL     https://github.com/ucxn/ZTE-Stat_Max/raw/refs/heads/main/new.user.js
 
