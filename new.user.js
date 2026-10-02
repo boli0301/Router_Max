@@ -737,8 +737,8 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
             if (cC) {
               if (s.haOff === 0 || (s.haOff === undefined && !S.cSnap.devices?.[k])) {
                 GM_setValue('ha_presence', { timestamp: Date.now(), devices: { [k]: { name: cC.name || s.name || k, status: "上线" } } });
-                delete s.haOff;
-              } else if (s.haOff > 0) delete s.haOff;
+                s.haOff = undefined;
+              } else if (s.haOff > 0) s.haOff = undefined;
             } else if (s.haOff > 0) {
               if (Date.now() >= s.haOff) {
                 GM_setValue('ha_presence', { timestamp: Date.now(), devices: { [k]: { name: s.name || k, status: "下线" } } });
@@ -752,8 +752,8 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
             if (cC) {
               if (s.haOff === 0 || (s.haOff === undefined && !S.cSnap.devices?.[k])) {
                 GM_setValue('ha_presence', { timestamp: Date.now(), devices: { [k]: { name: cC.name || s.name || k, status: "上线" } } });
-                delete s.haOff;
-              } else if (s.haOff > 0) delete s.haOff;
+                s.haOff = undefined;
+              } else if (s.haOff > 0) s.haOff = undefined;
             } else if (s.haOff === undefined) {
               s.haOff = Date.now() + 300000;
             } else if (s.haOff > 0 && Date.now() >= s.haOff) {
@@ -1446,12 +1446,7 @@ async function fPP() {
                 iface: bI,
                 origMac: d.MACAddress
               };
-              let uR = `${d.UploadSpeed||0}Kbps`,
-                  dR = `${d.DownloadSpeed||0}Kbps`,
-                  uT = (+d.BytesSend || 0) * 0.001,
-                  dT = (+d.BytesReceived || 0) * 0.001,
-                  oS = +(d.OnlineTime || d.OnlineTimes || 0);
-              iI_arr.push(`<Instance><ParaName>MACAddress</ParaName><ParaValue>${escapeHTML(m)}</ParaValue><ParaName>IPAddress</ParaName><ParaValue>${d.IPAddress||""}</ParaValue><ParaName>AliasName</ParaName><ParaValue>${escapeHTML(bN)}</ParaValue><ParaName>HostName</ParaName><ParaValue>${escapeHTML(bN)}</ParaValue><ParaName>Interface</ParaName><ParaValue>${escapeHTML(bI)}</ParaValue><ParaName>UpRate</ParaName><ParaValue>${uR}</ParaValue><ParaName>DownRate</ParaName><ParaValue>${dR}</ParaValue><ParaName>UpThroughput</ParaName><ParaValue>${uT}</ParaValue><ParaName>DownThroughput</ParaName><ParaValue>${dT}</ParaValue><ParaName>OnlineDuration</ParaName><ParaValue>${oS}</ParaValue></Instance>`);
+              iI_arr.push(`<Instance><ParaName>MACAddress</ParaName><ParaValue>${escapeHTML(m)}</ParaValue><ParaName>IPAddress</ParaName><ParaValue>${d.IPAddress||""}</ParaValue><ParaName>AliasName</ParaName><ParaValue>${escapeHTML(bN)}</ParaValue><ParaName>HostName</ParaName><ParaValue>${escapeHTML(bN)}</ParaValue><ParaName>Interface</ParaName><ParaValue>${escapeHTML(bI)}</ParaValue><ParaName>UpRate</ParaName><ParaValue>${d.UploadSpeed||0}Kbps</ParaValue><ParaName>DownRate</ParaName><ParaValue>${d.DownloadSpeed||0}Kbps</ParaValue><ParaName>UpThroughput</ParaName><ParaValue>${(+d.BytesSend || 0) * 0.001}</ParaValue><ParaName>DownThroughput</ParaName><ParaValue>${(+d.BytesReceived || 0) * 0.001}</ParaValue><ParaName>OnlineDuration</ParaName><ParaValue>${+(d.OnlineTime || d.OnlineTimes || 0)}</ParaValue></Instance>`);
             }
           });
           window.gegeHiddenDevices = nHD;
