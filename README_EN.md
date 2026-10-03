@@ -48,7 +48,7 @@ While the official Web dashboard is stable, its UX design for data visualization
   * Trace-less injection. Does not break the native Vue state machine, ensuring browser rendering performance.
 * **:rainbow: Event-driven**: Optimizes the integration algorithm to prevent miscalculations of flow area caused by misaligned sampling times or phase differences. Uses changes in network speed as the basis for the sampling interval.
 
-## ℹ️ Glossary & Terminology
+## ⚠️ Glossary & Terminology
 #### Mode Names
 Mode A: Relies on the official page's `Network Management`; Mode B1: The mainline, utilizing the custom-built `BroTech Panel`; Mode B2: Seamlessly auto-switches with B1, primarily targeting hidden Mesh and other devices by sending `Micro-requests` individually; The switch from A to B is irreversible: this is mainly to ensure consistency in the statistical time frequency and measurement standards.
 #### Glossary
@@ -83,19 +83,19 @@ Before using this script, ensure your browser has a user script manager extensio
 ### Script Installation
 1.  Click here to install the full version of *ZTE-Stat_Max*：
    
-    **[Install from GitHub](https://github.com/ucxn/ZTE-Stat_Max/releases/latest)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Install via Greasy Fork](https://greasyfork.org/zh-CN/scripts/576199)**
+    **[Install from GitHub](https://github.com/ucxn/ZTE-Stat_Max/releases/latest)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Install via Greasy Fork](https://greasyfork.org/zh-CN/scripts/598569)**
 
     [*Install from **ScriptCat*** (Popular in China)](https://scriptcat.org/zh-CN/script-show-page/6194)
  
  
  Brother project fully upgraded, now with smart integration&nbsp;⇨&nbsp;<a href="https://github.com/ucxn/ZTE-Stat_HA" target="_blank"><img src="https://img.shields.io/badge/HACS-ZTE--Stat__Home%20Assistant-41BDF5?style=for-the-badge&logo=homeassistant&logoColor=white" alt="ZTE HACS"></a>
     
-2. Click **"Install"** or **"Update"** in the Tampermonkey popup interface.
+2. Click **"Install"** or **"Update"** in the Script Installing popup interface.
 3. Log into your ZTE router's Web management dashboard, *enter your admin password*, and upon successful login, *refresh the page* and navigate to the "Network Management" or "Connected Devices" page. The script will activate automatically.
 
 
 > [!IMPORTANT]
-> **Alternative Wake-up Entry**: If it isn't working, please check the **left sidebar navigation**, find the **🚀 哥哥科技面板（BroTech Panel）**, and click to open it; the functionality is essentially the same.<br> <br> Please ensure the **Tampermonkey** extension is running correctly!! Specifically, the extension icon in your browser should be displaying a number! The tutorial for allowing userscript injection is shown in the image below.
+> **Alternative Wake-up Entry**: If it isn't working, please check the **left sidebar navigation**, find the **🚀 哥哥科技面板（BroTech Panel）**, and click to open it; the functionality is essentially the same.<br> <br> Please ensure the **UserScript** extension is running correctly!! Specifically, the extension icon in your browser should be displaying a number! The tutorial for allowing userscript injection is shown in the image below.
 
 > [!NOTE]
 > **Via Browser** (Mobile): Script/Plugin features *DON'T WORK* ?
@@ -109,7 +109,7 @@ Before using this script, ensure your browser has a user script manager extensio
  
 > [!TIP]
 > If the script is still not taking effect, please refer to the following tutorial:
-> ![Graphic Tutorial](./assets/Install.png)
+> ![Graphic Tutorial](./assets/Installation.jpg)
 
 ## 📸 Screenshots
 
@@ -127,7 +127,7 @@ const CONFIG = {
     uiLayout: 1, // [Panel layout] 0: Classic | 1: Detailed compact (cockpit style) | 2: Detailed flat (report style)
     injectMode: 1, // [UI injection mode] 0: Native sidebar (1 min) | 1: Preferred, 10s floating widget (D) | 2: Hybrid | 3: Forced
     lanPortMode: 1, // [Physical ports] 0: Off | 1: Append to the bottom | 2: WAN high-speed takes over the main line
-    lanRefreshInterval: 6, // LAN refresh interval (seconds). Also used in some cases to compensate for traffic between the evaluation point (0) and wake-up
+    lanRefreshInterval: 3, // LAN refresh interval (seconds). Also used in some cases to compensate for traffic between the evaluation point (0) and wake-up
     wanRefreshInterval: 3, // [WAN] refresh interval (seconds). Usually the program's main clock cycle
     信号强度刷新周期: 16, // Signal strength refresh period, in frames (the main sampling cycle). Must be a power of 2 (1 = never actively refresh)
     宽带最大外网下行速率: 24e8, // Max WAN download rate in bits per second (bps)
@@ -151,13 +151,13 @@ const CONFIG = {
 };
 ```
 
-## ⚠️ Notes
+## ℹ️ Notes
 
 * This script only reformats and calculates the fetched API data on the frontend; it will not modify the router's underlying core configuration.
 * If your router's management address is a non-standard IP, please manually add it to the `@match` or `@include` header rules in the script.
 * This script is a pure frontend DOM injection and data reorganization tool. It does not involve modifying the ZTE router's underlying firmware.
 
-Utilizing the Tampermonkey environment, the script makes concurrent requests to the router's `vue_home_device_data_no_update_sess` and `vue_client_data` APIs. To eliminate the lag caused by the official frontend's polling refresh, the script internally implements an independent timer via `performance.now()`, deriving highly accurate instantaneous traffic data. All UI modifications are executed via DOM Mutation on top of the original page's CSS framework, ensuring a native feel and seamless compatibility.
+Utilizing the Xmonkey environment, the script makes concurrent requests to the router's `vue_home_device_data_no_update_sess` and `vue_client_data` APIs. To eliminate the lag caused by the official frontend's polling refresh, the script internally implements an independent timer via `performance.now()`, deriving highly accurate instantaneous traffic data. All UI modifications are executed via DOM Mutation on top of the original page's CSS framework, ensuring a native feel and seamless compatibility.
 
 ---
 *Authored by Brother Tech*

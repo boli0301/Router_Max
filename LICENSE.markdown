@@ -9,14 +9,14 @@ Required Notice: https://github.com/ucxn/ZTE-Stat_Max
 中兴官方可以自行、先行、直接集成该程序，但是必须保留署名；署名具体的方式可以商榷，我或将对 ZTE 公司提供更加合理的许可。
 
 # License
-Copyright © 2026 哥哥科技 (Bro-Tech)
+Copyright © 2026 哥哥科技 (Bro-Tech)<br>
 This project is available under either of the following licensing options:
 
 Regardless of the licensing path chosen, it is subject to the **BroTech Prominent Attribution Terms** set forth in this document.
 无论选择何种授权路径，均同时受本文件所载 **哥哥科技显著署名附加条款** 约束。
 
-1. **Adaptive Public License - Bro 0.1（已经包含额外的署名要求条件）** ; or
-2. **Sustainable Use License 1.0 (SUL-1.0) WITH BroTech-Prominent-Attribution-Terms AND Broware Attribution–Noncommercial License（Bro-BY-NC）1.0**.
+1. **Adaptive Public License - Bro 0.1**[（已经包含额外的署名要求条件）]((./LICENSE/license.txt)) ; or
+2. Sustainable Use License 1.0 ([**SUL-1.0**]((./LICENSE/SUL-1.0.md))) WITH [***BroTech-Prominent-Attribution-Terms***](#哥哥科技显著署名附加条款) AND Broware Attribution–Noncommercial License（**[Bro-BY-NC]((./LICENSE/BR-BY-NC-1.0.md))**）1.0（以每次提交时的版本或最新版为准）.
 
 可以根据自己的使用场景自行抉择，第二种看似严格多，但是针对个人、非商业使用，条款相对较简练通俗，方便非英语母语者理解。
 
@@ -24,13 +24,14 @@ You may choose either licensing option.
 
 In SPDX notation:
 
-`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1 OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0)`
+`SPDX-License-Identifier: LicenseRef-APL-Bro-0.1+ OR (SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0+)`
 
 许可证名称、SPDX 标识及其他简写仅用于识别。实际授权范围、条件及义务，以本仓库随软件发布的实际许可证文本、补充文件以及本文件中明确纳入的附加条款为准。
 
 - Adaptive Public License for BroTech: [`license.txt`](./LICENSE/license.txt)
-- Supplement File: [`suppfile.txt`](./LICENSE/suppfile.txt)
+- Supplement File: [`suppfile.txt`](./LICENSE/suppfile.txt)<br><br>
 - Sustainable Use License 1.0: [`SUL-1.0.md`](./LICENSE/SUL-1.0.md)
+- 哥哥科技显著署名附加条款: [`BroTech Prominent Attribution Terms`](#brotech-prominent-attribution-terms)
 - Broware Attribution–Noncommercial License 1.0: [`BR-BY-NC-1.0.md`](./LICENSE/BR-BY-NC-1.0.md)
 
 无论使用何种许可证，都应当保留作者的显著署名。<br>
@@ -58,6 +59,8 @@ Regardless of the license used, the 哥哥科技's prominent attribution must be
 
 保留“哥哥科技”的完整字面量和实质显示、可见性与显著性，是作者授予本软件任何许可权利所不可分割的条件。
 
+条款全文结束，严格遵守该协议是使用本仓库任意代码合法性的前置条件。
+
 ## BroTech Prominent Attribution Terms
 Regardless of the license or licensing route used, the Bro-Tech's prominent attribution MUST be retained.
 
@@ -72,3 +75,5 @@ The only exception concerns displaying these characters in an integration enviro
 The characters “哥哥科技” must always be retained, without exception. The prominence of the original form of attribution must not be reduced in any way; \*\*this prohibits any reduction, not merely a significant reduction.\*\*
 
 Regardless of the reason, even if technical difficulties prevent “哥哥科技” from being displayed unchanged within a larger work or in another programming language, you must still retain the literal string “哥哥科技” and may only add other forms of attribution that prominently identify 哥哥科技. You must also promptly notify me via GitHub or email. Preserving the full visibility of “哥哥科技” is an inseparable condition of any rights I grant.
+
+END OF TERMS. Strict compliance with this Agreement constitutes an absolute condition precedent to the legality of using any code from this Repository.

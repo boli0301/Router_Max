@@ -28,7 +28,7 @@
 
 ## [点击一键安装](https://github.com/ucxn/ZTE-Stat_Max#%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85)&emsp;&nbsp;&emsp;[![Bilibili](https://img.shields.io/badge/Bilibili-观看演示视频-FF8EB3?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1PtR7B8ECC)
 
-[**国内用户**](https://scriptcat.org/zh-CN/script-show-page/6194)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[国际用户](https://greasyfork.org/en/scripts/576199)**
+[**国内用户**](https://scriptcat.org/zh-CN/script-show-page/6194)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[国际用户](https://github.com/ucxn/ZTE-Stat_Max/releases/latest)**
 
 官方 Web 后台虽然稳定，但在数据展示的交互设计上存在一些不便。例如，实时的网速数据和设备历史累积流量被隐藏在了二级菜单中，需要频繁点击具体设备才能查看，无法在全局列表形成直观的对比。本插件的核心目的就是“拍平”这些层级。将单台设备的上下行网速、本次在线期间的积分流量，以及底层的累积总吞吐量，全部提取并前置到主设备列表中，无需任何多余的操作，所有设备的网络吞吐状态一目了然。
 
@@ -59,15 +59,15 @@
 ## 🚀 安装指南 (Installation)
 
 ### 环境要求
-在使用本脚本之前，请确保您的浏览器已安装用户脚本管理器扩展，例如：
-* **篡改猴   [Tampermonkey](https://www.tampermonkey.net)**  (推荐, 支持 Chrome, Edge, Firefox, Safari)
+ 本插件支持 Chrome, Edge, Firefox, Safari，在使用之前，请确保您的浏览器已安装用户脚本管理器扩展，例如：
+* **篡改猴   [Tampermonkey](https://www.tampermonkey.net)**
 * **暴力猴   [Violentmonkey](https://violentmonkey.github.io)**
 * **油猴子   [Greasemonkey](https://www.greasespot.net)**
 
 ### 脚本安装
 1.  点击此处安装全面版ZTE-Stat_Max：
 
-    [从GitHub安装](https://github.com/ucxn/ZTE-Stat_Max/releases/latest)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[从GreasyFork安装](https://greasyfork.org/zh-CN/scripts/576199)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[从OpenUserJS自动更新](https://openuserjs.org/scripts/%E5%93%A5%E5%93%A5%E7%A7%91%E6%8A%80/%E4%B8%AD%E5%85%B4%E8%B7%AF%E7%94%B1%E5%99%A8(ZTE)_%E5%A2%9E%E5%BC%BA)
+    [从GitHub安装](https://github.com/ucxn/ZTE-Stat_Max/releases)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[从GreasyFork安装](https://greasyfork.org/zh-CN/scripts/598569)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[直接安装测试版](https://raw.githubusercontent.com/ucxn/ZTE-Stat_Max/refs/heads/main/new.user.js)
 
     [通过 ScriptCat 脚本猫 安装（直连推荐：**无需科学上网**）](https://scriptcat.org/zh-CN/script-show-page/6194)更新推送
 
@@ -93,7 +93,7 @@
 > 若脚本仍未生效，请使用如下教程：
 ![图文教程](./assets/Install.png)
 
-## ℹ️ 程序术语
+## ⚠️ 程序术语
 #### 模式名称
 A模式：依托于官方页面的 `组网管理`，B1模式：主线，自建 `哥哥科技面板`，B2：和B1无缝自动切换，主要针对隐藏Mesh等设备逐个发`小包`；A到B的切换不可逆：主要也是为了保证统计时间频率口径的一致性。详见：**[名词解释](中兴名词对照表.md)**.
 #### 名词解释
@@ -117,7 +117,7 @@ const CONFIG = {
     uiLayout: 1, // 【面板拓扑结构】 0: 经典版 | 1: 详细紧凑版(驾驶舱美学) | 2: 详细平铺版(报表流美学)
     injectMode: 1, // 【UI注入模式】 0: 原生侧边栏(1min)| 1: 优先，10秒悬浮舱(D)| 2: 联动模式| 3：强制模式
     lanPortMode: 1, // 【物理网口】 0: 关闭 | 1: 底部追加显示 | 2: WAN高速接管主线
-    lanRefreshInterval: 6, // LAN口刷新时间(秒)，同时部分场景下用于补偿评估0到唤醒期间的流量
+    lanRefreshInterval: 3, // LAN口刷新时间(秒)，同时部分场景下用于补偿评估0到唤醒期间的流量
     wanRefreshInterval: 3, // 【外网】WAN口刷新时间(秒)，通常为程序主时钟周期
     信号强度刷新周期: 16, // 信号强度刷新周期，单位：帧（程序主采样周期）；请设成 2 的自然数次幂（其中1为不主动请求刷新）
     宽带最大外网下行速率: 24e8, // 配置外网最大上传|下载比特(bit/bps)速率
@@ -141,7 +141,7 @@ const CONFIG = {
 };
 ```
 
-## ⚠️ 注意事项 (Notes)
+## ℹ️ 注意事项
 
 * 本脚本仅在前端对获取到的 API 数据进行重新排版与计算，不会修改路由器底层的核心配置。
 * 若您的路由器管理地址为非标准 IP，请在脚本的 `@match` 或 `@include` 头部规则中自行添加。

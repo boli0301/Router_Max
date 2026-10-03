@@ -4,10 +4,11 @@
 // @namespace       ucxn
 // @version         5.9.X
 // @description     一款针对中兴官方计数器和UI不区分上下行、流量数据不可靠、网页隐藏API等问题而诞生的测控“引擎”，一个庞大的循环流程程序；融合了哥哥的大量思想和算法，探索属于家庭网关的真相。
-// @description:en  Bro-Tech QQ群（Group） 680464365
+// @description:en  A telemetry and control "engine" engineered to address the flaws of ZTE's official counters and UI—such as the lack of uplink/downlink separation, unreliable traffic data, and hidden web APIs. It is a massive cyclic processing program; infused with a wealth of BroTech's philosophies and algorithms, dedicated to uncovering the truth behind home gateways.
+// @copyright       哥哥科技. All Rights Reserved. 使用必要条件之一：不得删除源码、用户界面、文本中的任何“哥哥”；传播官方链接不限；除安装自用外任何使用传输均需查看许可证。
 // @author          哥哥科技 space.bilibili.com/501430041
 // @noframes
-// @tag             哥哥科技 路由器 中兴 网络 监控 统计 数据 可视化 极客 增强 UI HA 智能 定时 后台 Measurement M&C Bro 宽带 流量 网速 算法 JS C WebHook 网页 浏览器 微积分 公网 Brotech
+// @tag             哥哥科技 路由器 中兴 网络 监控 统计 数据 可视化 极客 增强 UI HA 智能 定时 后台 Measurement M&C Bro 宽带 流量 网速 算法 JS C WebHook 网页 浏览器 微积分 公网 Brotech Bro-Tech
 // @icon            https://scriptcat.org/api/v2/resource/image/PD6xhxddlUESIwAV
 // @include         /^https?:\/\/10(\.[0-9]{1,3}){3}(:\d+)?\/.*$/
 // @include         http://192.168.*.*
@@ -17,10 +18,11 @@
 // @include         https://172.16.*
 // @include         /\/menu\/dashboard/
 // @exclude         *://*/cgi-bin/luci*
+// @note            发行版作者哥哥科技保留所有权利，必须完整转载，若摘取则需自行在GUI一级加上哥哥科技的显著署名；源码本身公开，请前往 GitHub 获得授权范围许可证。
 // @grant           GM_setValue
 // @grant           GM_getValue
 // @storageName     GBNPA_Storage
-// @license         LicenseRef-APL-Bro-0.1 OR SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0
+// @license         LicenseRef-APL-Bro-0.1+ OR SUL-1.0 WITH AdditionRef-BroTech-Prominent-Attribution-Terms AND BR-BY-NC-1.0+
 // @website         https://github.com/ucxn/ZTE-Stat_Max
 // @supportURL      https://b23.tv/BV1PtR7B8ECC
 // @run-at          document-start
@@ -54,7 +56,7 @@
     盲漫游: undefined, //也就是包括但不限于无线交换机（AP/有线桥接）模式，无线设备被主路由识别为有线设备则设置1
     周期类型: 'W', // 'M'(每月), 'W'(每周), 'D'(固定天数)； 其它任意字符：不开启周期重置+自动导出功能
     周_天设置: 6, // M: 1~31号; W: 0~6(周日~周六); D: 间隔天数(如 7)
-    基准日期: '2026-06-20', // 原点时间(仅 D 模式有效) 任意一个历史周期的零点
+    基准日期: '2027-03-01', // 原点时间(仅 D 模式有效) 任意一个历史周期的零点
     报告时间: -720, // 提示时间：相对周期0点的偏移分钟数（如 -4320 代表提前 3 天）设置相对指定日期的下个周期起点的时间偏移量
     自动导出: -180, // 强制导出：相对周期0点的偏移分钟数（如 W模式+锚点6(周六)+偏移-180 = 周五 21:00 强制导出清零）
     时区补偿: 28800000, // 默认 UTC+8 时区补偿量。
@@ -1085,7 +1087,7 @@ const SPRK = [' ', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
       });
       requestAnimationFrame(() => {
         ol.innerHTML = `<div style="padding: 20px; max-width: 1580px; margin: 0 auto; min-height: 100%;"><div id="gege-board-anchor"></div><div id="config-list" class="config-list gege-list-container"><div class="gege-section"><div class="config-title">有线设备${(window.gegeHiddenDevices && Object.keys(window.gegeHiddenDevices).length > 0) ? `<span id="gege-mesh-badge" style="color: #ff4c00; font-size: 13px; font-weight: normal; margin-left: 10px; font-family: Consolas;">(哥哥科技：${ol.querySelector('#gege-mesh-badge')?.textContent === '(哥哥科技：Mesh全面适配)' || Object.values(window.gegeHiddenDevices).some(d => d?.mesh === false) ? 'Mesh全面适配' : '智能Mesh适配'})</span>` : ''}</div>${hW.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（${S.is5G_149?'5.8GHz':'5.2GHz'}）</div>${h52.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（${S.is5G_149?'5.2GHz':'5.8GHz'}）</div>${h58.join('')||'<div class="gege-empty-state">没有连接设备</div>'}</div><div class="gege-section"><div class="config-title">无线设备（2.4GHz）</div>${h2.join('')||'<div class="gege-empty-state">没有连接设备</div>'}
-        </div><div style="margin-top: 25px; padding-top: 15px; border-top: 1px dashed #eee; text-align: center; font-family: Consolas, 'Microsoft YaHei', sans-serif;"><div style="font-size: 11.5px; color: #777; font-style: italic; margin-bottom: 8px;">“在一个文明社会，干净的、不被监视与吸血的网络，是我们每个人的基本权利。”</div><div style="font-size: 10.5px; color: #999; line-height: 1.3; margin-bottom: 8px;">本交互式程序为“哥哥软件”范本，对尊重署名者开放源代码，按“原样 (AS IS)”免费提供，不对其适用性、稳定性、精密度或任何商业场景合规性作任何明示或暗示的担保。<a href="https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE.markdown" target="_blank" style="color: #777; text-decoration: underline;">许可证</a><br>协议规定：基于本程序的任何修改均不得移除本界面的署名，也不得弱化“显示的程度”。保持显著GUI署名和原样保留程序中所有“哥哥科技”是使用本软件代码的合法性的前置条件。
+        </div><div style="margin-top: 25px; padding-top: 15px; border-top: 1px dashed #eee; text-align: center; font-family: Consolas, 'Microsoft YaHei', sans-serif;"><div style="font-size: 11.5px; color: #777; font-style: italic; margin-bottom: 8px;">“在一个文明社会，干净的、不被监视与吸血的网络，是我们每个人的基本权利。”</div><div style="font-size: 10.5px; color: #999; line-height: 1.3; margin-bottom: 8px;">本交互式程序为“哥哥软件”范本；分享请使用官方链接，仅对尊重署名且持续保留者开放源代码，按“原样”免费提供，不对其适用性、稳定性、精密度或任何商业场景的合规性作任何担保。<a href="https://github.com/ucxn/ZTE-Stat_Max/blob/main/LICENSE.markdown" target="_blank" style="color: #777; text-decoration: underline;">分享/查看许可证</a><br>协议规定：基于本程序的任何修改均不得移除本界面的署名，也不得弱化“显示的程度”。保持显著GUI署名、原样保留程序中所有“哥哥科技”样式完全不变且轻松可见，是使用本软件代码的合法性的前置条件。
         </div><div style="font-size:12px;color:#555;"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="18" viewBox="0 0 122 20" role="img" aria-label="Broware BY NC" style="vertical-align:middle;margin-right:6px"><defs><linearGradient id="bg1" x2="0" y2="1"><stop stop-color="#4b4b4b"/><stop offset=".5" stop-color="#333"/><stop offset="1" stop-color="#1f1f1f"/></linearGradient><linearGradient id="bg2" x2="0" y2="1"><stop stop-color="#52d58c"/><stop offset=".52" stop-color="#31bc71"/><stop offset="1" stop-color="#218b50"/></linearGradient><linearGradient id="sh" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".32"/><stop offset=".45" stop-color="#fff" stop-opacity=".08"/><stop offset=".46" stop-opacity="0"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="c"><rect width="122" height="20" rx="4"/></clipPath></defs><g clip-path="url(#c)"><path fill="url(#bg1)" d="M0 0h24v20H0z"/><path fill="url(#bg2)" d="M24 0h98v20H24z"/><path fill="url(#sh)" d="M0 0h122v20H0z"/></g><g transform="translate(4 2)"><rect width="15" height="15" rx=".6" fill="#fff"/><rect x="1" y="1" width="13" height="13" fill="#58d18d"/><path fill="#fff" d="M1 1h7v7z"/><path fill="#32bf70" d="M8 1h6v13H8z"/><path fill="#1ba856" d="M1 14h7V8l6 6z"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11"><text x="73" y="15" fill="#000" fill-opacity=".28">Broware BY NC</text><text x="73" y="14">Broware BY NC</text></g></svg><a href="https://github.com/ucxn/ZTE-Stat_Max" target="_blank" style="color:#0059fa;text-decoration:none;font-weight:bold;">ZTE-Stat_Max 增强组件</a> <span title="构建时间：2026-9.29 11时&#10;架构设计：哥哥科技 BroTech&#10;Bilibili UID：501430041&#10;QQ群：680464365" style="cursor:help; border-bottom:1px dotted #ccc; font-family:Consolas;">${版本号}</span> | Copyright &copy; 2026 <a href="https://www.bilibili.com/video/BV1PtR7B8ECC" target="_blank" style="color: #0059fa; text-decoration: none; font-weight: bold;">哥哥科技</a> (BroTech)<span style="color: #888; font-weight: normal;"> | All Rights Reserved</span>&emsp;&nbsp;<a href="https://scriptcat.org/zh-CN/script-show-page/6194" target="_blank" style="color: #666; text-decoration: none;">点此分享</a></div></div></div></div>`;
       S._domRebuilt = true;});}
     catch (e) {

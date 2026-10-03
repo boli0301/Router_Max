@@ -1,7 +1,7 @@
 # License
 
 Content of branches other than the main branch are not licensed.
-Source code files that contain ".bak" or "过时" or "temp" in their filename or "history" in their dirname are NOT licensed under the Sustainable Use License. 
+Source code files that contain ".bak" or "过时" or "temp" in their filename or "history" in their dirname are NOT licensed under the Sustainable Use License. Referenced from n8n.
 
 # Copyright © 2026 哥哥科技
 
