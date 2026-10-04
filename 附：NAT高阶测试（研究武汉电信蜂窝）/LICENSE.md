@@ -23,10 +23,10 @@ text in verifiable form.
 this GPG-signed text in any documentation and, each time the resulting
 executable program or a program dependent thereon is launched, a
 prominent display (e.g., splash screen or banner text) of the Author's
-attribution information, which includes:
-(a) Name ("哥哥科技"),
-(b) Professional identification ("长兄天工"), and
-(c) URL ("https://github.com/ucxn/BroTech").
+attribution information, which includes:<br><br>
+(a) Name ("哥哥科技"),<br>
+(b) Professional identification ("长兄天工"), and<br>
+(c) URL ("https://github.com/ucxn/BroTech").<br><br>
 3. Neither the name nor any trademark of the Author may be used to
 endorse or promote products derived from this software without specific
 prior written permission.
@@ -51,6 +51,6 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-–End of License
-
+–End of License<br><br>
 Originally written by Edwin A. Suominen for licensing his PRIVARIA secure networking software (see www.privaria.org). The author, who is not an attorney, places this license template into the public domain along with a complete disclaimer of any warranty or responsibility for its content or legal efficacy. You may use or modify the language freely, but entirely at your own risk.
+作者更在乎时薪，工作生活平衡、以及闲暇时光。因此，将原文中偏主观的表述进行了修改。</br>虽然部分条款中也继承了这句话，但没必要写“几千美刀”……</br>本修改不属于实质性内容，也不影响本身的法律效力。

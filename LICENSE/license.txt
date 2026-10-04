@@ -180,7 +180,8 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
 		above attribution requirement only applies to an executable program resulting from the Initial Work or any Subsequent Work, but not a program dependent thereon. The intent is 
 		to provide for PROMINENT attribution.
 
-    3.11. For greater certainty, any occurrence of “哥哥科技” or “哥哥”, and any occurrence matching the pattern /\bBro(?:ther)?(?:[-_ ]?Tech)?\b/i, whether literal or in any substantially
+    3.11. For greater certainty, 
+	    Any occurrence of “哥哥科技” or “哥哥”, and any occurrence matching the pattern /\bBro(?:ther)?(?:[-_ ]?Tech)?\b/i, whether literal or in any substantially
 		equivalent representation, incorporated into or already existing in the Source Code shall not be altered or tampered with in any manner.
 
 4. COMMERCIAL USE AND INDEMNITY.
@@ -233,7 +234,7 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
     7.3. This License, including without limitation the rights granted hereunder to a particular Recipient, will terminate automatically and immediately, without notice, if such Recipient is in
 	material breach of any of the terms of this License. Without limiting the foregoing, any material breach by such Recipient of any term of any other License under which such Recipient is granted
 	any rights to the Licensed Work shall constitute a material breach of this License.
-	Any breach of Section 3.11 or 10.2, or of the free-of-charge distribution requirements in Sections 3.2 or 3.3, shall constitute a material breach of this License.
+	Any breach of Section 3.11 and/or 10.2, or of the free-of-charge distribution requirements in Sections 3.2 or 3.3, shall constitute a material breach of this License.
 	Curing a breach shall not automatically reinstate any terminated rights under this License; reinstatement requires the Initial Contributor's express written consent. Neither termination nor cure
 	shall release the Recipient from liability for any breach occurring before such termination or cure.
 
@@ -277,7 +278,8 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
 10. MISCELLANEOUS.
     10.1. The obligations imposed by this License are for the benefit of the Initial Contributor and any Recipient, and each Recipient acknowledges and agrees that the Initial Contributor and/or 
 		any other Recipient may enforce the terms and conditions of this License against any Recipient.
-    10.2. Where a reference to Bro-Tech's project already makes the relevant field or context unambiguous, the GitHub username or project name (although omission is not recommended), as well as the repository URL, may be omitted.
+    10.2. 
+        (a) Where a reference to Bro-Tech's project already makes the relevant field or context unambiguous, the GitHub username or project name (although omission is not recommended), as well as the repository URL, may be omitted.
 		However, under no circumstances may the following four Chinese characters:
 
 		『哥哥科技』
@@ -293,6 +295,24 @@ and (c) for selected patent licensing terms (if any) see Section 2.2 below and P
 		promptly notify Bro-Tech of the circumstances through GitHub or by email. The foregoing requirements constitute an inseparable and integral part of every right granted under this License.
 
 		Any Recipient relying on such technical difficulty must objectively demonstrate that the inability to display Chinese results from genuine technical limitations.
+
+        (b) The following guidelines apply strictly and exclusively to the specific scenario where you integrate this software into a larger, overarching work, rendering it structurally or technically impossible to
+		preserve the original unmodified Graphical User Interface (GUI) and its attribution design in their exact original form.
+		EXPRESS RESERVATION OF RIGHTS AND OBLIGATIONS: This guide is provided solely for instructional compliance purposes. It does NOT, under any circumstances, operate as an implicit or explicit grant of any additional
+		rights or licenses beyond the primary agreement. Furthermore, it does NOT waive, substitute, or dilute any of your strict obligations under the primary licenses and the BroTech Prominent Attribution Terms and 3.11.
+		Adherence to this guide is merely a compliant implementation method for integration scenarios, and shall by no means exempt you from the absolute and simultaneous satisfaction of all conditions precedent set forth above.
+
+		The rights to use this software are granted to you ONLY subject to the absolute condition precedent of your complete, continuous, and strict compliance with the prominent attribution requirements herein. If you are unable to
+		comprehend the legal implications of these terms, you are advised to consult independent legal counsel. Conversely, under no circumstances may you isolate, sever, or selectively apply the rights-granting clauses without
+		fulfilling the prominent attribution obligations. Should you fail to understand what constitutes "prominent attribution," you MUST elect NOT to use the source code of this software. In such an event, you are permitted solely
+		to share the official original link or download the software exclusively for personal, local use; any and all other operations or distributions are strictly prohibited.
+
+		Should you, as a developer, integrate this software into a larger work or project, you must strictly adhere to the following display protocols: The physical|logical prominence of the attribution (including but not limited to
+		layout style, font size, color, and contrast) shall absolutely NOT be altered or diminished in any manner. When developing based on this program, the absolute depth level of the attribution within the Graphical User Interface
+		(GUI) hierarchy must remain unchanged; furthermore, upon integration into a larger work, its "relative depth level" within the navigation and interaction architecture shall suffer no degradation.
+
+		For instance, when an end-user navigates into a module or feature primarily powered by this software, the text "哥哥科技" (Brother Tech) MUST be prominently and unaltered displayed in the exact original position designed by
+		the Author on the GUI of that specific directory/module. Any attempt to fold, collapse, or relocate the attribution into secondary or hidden menus is strictly forbidden.
 
     10.3. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded.
     10.4. The language in all parts of this License shall be in all cases construed simply according to its fair meaning, and not strictly for or against any of the parties hereto. Any 

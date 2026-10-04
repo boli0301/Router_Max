@@ -15,8 +15,8 @@ This project is available under either of the following licensing options:
 Regardless of the licensing path chosen, it is subject to the **BroTech Prominent Attribution Terms** set forth in this document.
 无论选择何种授权路径，均同时受本文件所载 **哥哥科技显著署名附加条款** 约束。
 
-1. **Adaptive Public License - Bro 0.1**[（已经包含额外的署名要求条件）]((./LICENSE/license.txt)) ; or
-2. Sustainable Use License 1.0 ([**SUL-1.0**]((./LICENSE/SUL-1.0.md))) WITH [***BroTech-Prominent-Attribution-Terms***](#哥哥科技显著署名附加条款) AND Broware Attribution–Noncommercial License（**[Bro-BY-NC]((./LICENSE/BR-BY-NC-1.0.md))**）1.0（以每次提交时的版本或最新版为准）.
+1. **Adaptive Public License - Bro 0.1**[（已经包含额外的署名要求条件）](/LICENSE/license.txt) ; or
+2. Sustainable Use License 1.0 ([**SUL-1.0**](/LICENSE/SUL-1.0.md)) WITH [***BroTech-Prominent-Attribution-Terms***](#哥哥科技显著署名附加条款) AND Broware Attribution–Noncommercial License（**[Bro-BY-NC](/LICENSE/BR-BY-NC-1.0.md)**）1.0（以每次提交时的版本或最新版为准）.
 
 可以根据自己的使用场景自行抉择，第二种看似严格多，但是针对个人、非商业使用，条款相对较简练通俗，方便非英语母语者理解。
 
@@ -72,7 +72,7 @@ Under no circumstances may the following Chinese characters be removed, altered,
 
 The only exception concerns displaying these characters in an integration environment that is technically incapable of supporting UTF-8, Unicode, GB 18030, or other encodings capable of representing them. You may add “Brotech” as supplementary attribution, accompanied by the author's username, but you must NEVER delete or replace the literal string “哥哥科技”.
 
-The characters “哥哥科技” must always be retained, without exception. The prominence of the original form of attribution must not be reduced in any way; \*\*this prohibits any reduction, not merely a significant reduction.\*\*
+The characters “哥哥科技” must always be retained, without exception. The prominence of the original form of attribution must not be reduced in any way; **this prohibits any reduction, not merely a significant reduction.**
 
 Regardless of the reason, even if technical difficulties prevent “哥哥科技” from being displayed unchanged within a larger work or in another programming language, you must still retain the literal string “哥哥科技” and may only add other forms of attribution that prominently identify 哥哥科技. You must also promptly notify me via GitHub or email. Preserving the full visibility of “哥哥科技” is an inseparable condition of any rights I grant.
 
