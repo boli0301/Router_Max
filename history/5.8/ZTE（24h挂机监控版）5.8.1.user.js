@@ -11,7 +11,6 @@
 // @match        http://192.168.5.1
 // @match        http://zte.home*
 // @grant        none
-// @license      GPL-3.0-or-later
 
 // ==/UserScript==
 

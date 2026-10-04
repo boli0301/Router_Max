@@ -16,7 +16,6 @@
 // @grant        none
 // @updateURL    https://update.greasyfork.org/scripts/576199/%E4%B8%AD%E5%85%B4%E8%B7%AF%E7%94%B1%E5%99%A8%28ZTE%29%20%E5%A2%9E%E5%BC%BA.meta.js
 // @downloadURL  https://github.com/ucxn/ZTE-Stat_Max/raw/refs/heads/main/new.user.js
-// @license      GPL-3.0-or-later
 
 // ==/UserScript==
 

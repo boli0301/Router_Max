@@ -34,6 +34,8 @@ In SPDX notation:
 - 哥哥科技显著署名附加条款: [`BroTech Prominent Attribution Terms`](#brotech-prominent-attribution-terms)
 - Broware Attribution–Noncommercial License 1.0: [`BR-BY-NC-1.0.md`](./LICENSE/BR-BY-NC-1.0.md)
 
+针对开发使用的工程快速*参考* 指南：[Abstract of key rules for developers](/LICENSE/CopyRight.md)
+
 无论使用何种许可证，都应当保留作者的显著署名。<br>
 Regardless of the license used, the 哥哥科技's prominent attribution must be retained.
 
