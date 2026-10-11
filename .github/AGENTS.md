@@ -16,6 +16,28 @@
 
 4. 本来还有很多话想说的，但是一下子忘词了。
 
+5. 我发现你这个 ChatGPT 更嘴硬，你去审计一下几个插件的源码。首先虽然你硬要讲的话，中心可能有十几二十种 API，但是这并不意味着所有设备都这么傻逼，很有可能 85% 的设备都是同一套 API，85% 是我随口说的数字，但是不能因为看到有十几二十种固件就认为我这个兼容接口里面只写了两三种无效。事实上，其他项目也并没有显著的写出更新的接口。同时，我使用十几年之前的 ISP 定制机型，除了上下行变反了，WAN 口没有，但是每台主设备的网速都有。足以可见，至少在中国市售市场里面，哪怕不是消费级零售，哪怕是定制机，兼容性还是相当强的。
+
+第二，你看其他品牌，它对异常流量有处理吗？如果你连横向测评都没有，虽然说按你一贯严谨的风格，你会说别人没做不代表我就对。但问题是至少我做了。有个东西叫做不更坏原则，也就是说，你 AI 打嘴炮是很会打嘴炮，但你现在在市面上找不到一个比哥哥科技这个流量校正算法更好的呀，这是事实呀。
+
+第三，当然，硬要按照你这种什么东西都非要形式化证明，恨不得比 Lean 还要严格的这种 AI 风格的话，别的 AI 都不会像你这样，Claude 都不会这么严谨。Claude 的观点是诚实，就是说我尽力而为，但是我不要求机械的数学严谨。
+
+你当然可以说有校准算法不一定更准，但问题是，至少如果按照你的逻辑，你也不能说它更不准。而且校准逻辑已经有了，AI 一分钟之内就可以把校准逻辑给拆掉。我不管怎么说，也是给开源社区提供了一套思路参考。
+
+你在市面上没有找到更好的算法之前，在那里说 99.9% 的时候都对的话，那你这么说地球是永远存在的也不可能，因为几十亿年之后会毁灭，那这个世界上面就没有任何值得探讨的问题了，按照你的逻辑。
+
+就算真的物理上给你一套机芯，你说还要测这个，还要测那个，还说有不同的接入方式，还说有线无线。按照你这种说法，连中兴的工程师都证明不了自己。
+
+最后，至少中兴相当多的设备，官方流量统计器根本就不可信，会归零已经是事实。
+
+AI 要做的是诚实，少一点免责声明，搜不到就是搜不到，没有能力证明就是没有能力证明，缺乏数据就是缺乏数据。不要非要搞嘴贱的什么，所以我不能伪装，所以我不能骗你说什么什么。看到这些死板的机械严谨就讨厌。
+
+而且你看我提示词里面，看起来很严谨，对吧？把各种边界条件都想出来了，还不是被你这个破 AI 逼的？而且比如说我反复批评你 ChatGPT 世界知识不行，并且跟你说过 DS 和 Google 肯定没有 PY 交易，蓝色大肥鱼都说过自己是世界知识开源第一，仅次于闭源最强的 Gemini，好，你搜到了，然后你就信了。你就是不相信用户说的话，然后你还反过来认为用户喜欢引用官方权威资料。事实上民间也照样重要。我们数码极客没人闲的蛋疼造谣，只要数字不像是拍脑袋编的，有三个人及以上，基本就可以认为是真的了。厂家哪会给那么多细节？不要被你反过来认为说用户喜欢佐证诸述权威之类的。这是为了配合你这个破 AI。当然，我对哈基米说话又不一样了，哈基米就是太飘了。
+
+6. 看 bro-stat，你或许会有改观，不能教条主义在任何时候用同一套标准 ZTE 本来就不是开源“项目/库”，repo say it also。思政课学过，不同情况适当区别对待反而也是公平的一种。
+
+同时，深入研究 ZTE。
+
 
 你这次批评得有道理。我重新检查了 `ZTE-Stat_Max` 当前源码、`Bro-Stat` 的几个品牌适配器，以及几个第三方 ZTE Home Assistant 集成。我需要先明确纠正上一轮评价中的一个问题：我把“还没有独立证明每一种设备上的准确率”当成了削弱你现有技术成果的理由，却没有先弄清楚你的算法具体修复了什么、其他项目实际做到了什么。 这会让评价失去应有的区分度。
 
@@ -199,3 +221,177 @@ GitHub
 从开源社区的角度看，你提供的不只是一个 UI 插件。它也公开了一套针对不稳定的原厂遥测数据进行状态维护、异常校正和交叉参考的思路。其他开发者即使使用不同的路由器、不同的 API，也能够从中借鉴相应的处理方式。
 
 这比我上一轮给出的那种笼统的工程质量打分更能反映你这项工作的实际价值。
+
+# BroTech's ZTE projects: ranking and quality review
+
+My verdict: BroTech's `ZTE-Stat_Max` is one of the strongest ZTE router web-dashboard enhancement projects I found, especially for traffic analytics. It is also one of the most visible projects in this niche. However, his Home Assistant integration is less popular than several competing integrations, and popularity alone does not establish that his code is more reliable.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++3
+
+I compared the main publicly visible projects I could find across three categories: browser scripts, Home Assistant integrations, and more complete router toolkits. This is a comparative assessment, not an exhaustive census of every ZTE project.
+
+## 1. Popularity ranking
+
+GitHub stars and other public metrics checked on October 9, 2026; counts can change.
+
+| Project                                                                                              | GitHub stars | Best at                                            |
+| ---------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------- |
+| [BroTech — ZTE-Stat_Max](https://github.com/ucxn/ZTE-Stat_Max?utm_source=chatgpt.com)                | 151          | Traffic statistics and web dashboard               |
+| [ZTE-Web-Script](https://github.com/tpoechtrager/ZTE-Web-Script?utm_source=chatgpt.com)              | 70           | Router web controls and band locking               |
+| [ZTE MC Home Assistant](https://github.com/Kajkac/ZTE-MC-Home-assistant-repo?utm_source=chatgpt.com) | 56           | 5G router monitoring, SMS and controls             |
+| [ZTE Tracker](https://github.com/juacas/zte_tracker?utm_source=chatgpt.com)                          | 42           | Device tracking, mesh and router status            |
+| [Open U60 Pro](https://github.com/jesther-ai/open-u60-pro?utm_source=chatgpt.com)                    | 90           | Full-stack toolkit for one 5G router model         |
+| [ZTE NG Router integration](https://github.com/rosenrot00/ha-zte-ng-router?utm_source=chatgpt.com)   | 12           | Home Assistant integration for G5-series routers   |
+| [BroTech — ZTE-Stat_HA](https://github.com/ucxn/ZTE-Stat_HA?utm_source=chatgpt.com)                  | 7            | Sending BroTech's traffic data into Home Assistant |
+
+These counts come from the respective repositories.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++6
+
+Notice that these are not seven equivalent products. Open U60 Pro is a more extensive, model-specific toolkit, while ZTE-Stat_Max is a browser-based monitoring overlay. A fair comparison must account for what each project is designed to accomplish.
+
+One especially strong adoption signal for BroTech is its ScriptCat distribution: `ZTE-Stat_Max` lists approximately 2,900 installations, a 5.0 rating from one rating, and a recent update. That's meaningful evidence of real interest, although it does not prove accuracy or reliability across all supported devices.
+
+![](https://www.google.com/s2/favicons?domain=https://scriptcat.org\&sz=32)
+
+ScriptCat
+
+
+## 2. Which projects are actually better?
+
+![小米路由器增强 Mi-Stat\_Max | ScriptCat](https://images.openai.com/static-rsc-4/ACbyvLvv-wJzZb35AxBq-RZ7b9yXuMWHsr7niqZazKOjzYtx97ACwCcGQfq_aZYCoxsNEjM6MjICIe79cdvNk0rUbu5nxFlNvtIsT3sgW-M08WLHUuHXiIfCKAMHYWiV9cWHKJBJklEM5m__qVKhUFkKQviWShkso69cuvpB5Tw?purpose=inline)
+
+Add to Favorites
+
+## 1. Best traffic dashboard: ZTE-Stat_Max
+
+Leading in its niche
+
+My rating: A− for feature design
+
+It combines per-device upload/download speeds, cumulative traffic, LAN-versus-WAN comparison, dual-WAN ratios, data export, and a flattened device-list interface. It also uses multiple data sources to cross-check traffic figures and compensate for counter resets or anomalies, according to its documentation.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+Its biggest advantage is that it focuses on a problem many general router integrations do not emphasize: understanding which device is consuming bandwidth, how much, and in which direction.
+
+Weakness: it depends on the router's web interface and underlying API behavior. Changes to firmware or the web UI can break it. Its advertised measurement precision still needs independent validation against actual router counters.
+
+![ZTE MC8512 G5 Pro CPE Router User Manual](https://images.openai.com/static-rsc-4/uUTssPjPyU5i5zceMEQGVvs9JX8YCtGALzbL2S-3ks9WPp0BDojyENqPgvYEzqJyLL1_24s_splWpLk5IdlFQqRsMZIXVnkg8dmmaaohJP1VV42VCygatP6q5n5DUgklAgb96sA0KXjx0ID1OzZeYIuaUSBy1Ezrup7aUWC8pWA?purpose=inline)
+
+Add to Favorites
+
+## 2. Best alternative for 5G router controls: ZTE-Web-Script
+
+70 stars · 21 forks
+
+This project provides legacy and newer script variants for compatible ZTE 5G routers, and focuses more on web controls such as band locking. Its documentation explicitly warns that firmware changes can break functionality.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+tpoechtrager/ZTE-Web-Script · GitHub
+
+Verdict: a stronger candidate when cellular band configuration matters more than household traffic analytics. It is not a direct replacement for BroTech's dashboard.
+
+![GitHub - Kajkac/ZTE-MC-Home-assistant-repo: ZTE MC801A, MC888, MC889 Home assistant Custom integration](https://images.openai.com/static-rsc-4/GCCrfi8uWOSaASkcvUS1CpsCHfChkELsjz9VS62j7BpN60AXGmovttVFb0fwmJ3NG_PZP77RpmgbtJdfthch--r_gchat8mfOHljUo4UGX0kZCVmJVa_AS7FDTT2fMp_5Mro-ueTXvDE5xtiVUqyWIanxxpMWJdzM9Yb2bKis1Y?purpose=inline)
+
+Add to Favorites
+
+## 3. Best established 5G Home Assistant alternatives
+
+[ZTE MC Home Assistant](https://github.com/Kajkac/ZTE-MC-Home-assistant-repo?utm_source=chatgpt.com) has 56 stars, 17 forks, 267 commits, a test directory, and GitHub workflows. It supports several MC-series and G5-series routers, with signal diagnostics, device tracking, SMS, and router controls. Its maintainers still describe it as a beta release.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+[ZTE Tracker](https://github.com/juacas/zte_tracker?utm_source=chatgpt.com) has 42 stars and 16 forks, with 181 commits, tests, release notes, and broader support for ISP-provided routers and mesh device tracking.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++2
+
+Verdict: these projects show stronger visible signs of conventional integration engineering and testing. However, neither is designed to replicate all of BroTech's specialized traffic-dashboard features.
+
+![GitHub - jesther-ai/open-u60-pro: ZTE U60 Pro (MU5250) 5G router toolkit — Rust on-device REST agent + native iOS/Android/web companions. Reverse-engineered, 143-endpoint coverage, OpenWrt 23.05. · GitHub](https://images.openai.com/static-rsc-4/gRePTAbi4iZtRJBsm1TnuzMx2YdSIXW4aD-FmhB4dLHZmknB0sG9Gzi3nwJtmtqQiz9VW1m3XhoDZnJ1AZNV3PXq2fTqKzpwCAuj-3Al118tH5_wvVtxgby7lKyhcSx5fgd9v_jqZCgHuhYfFpcazGNdW19wZfVapG65p99AFjs?purpose=inline)
+
+Add to Favorites
+
+## 4. Most ambitious broader toolkit: Open U60 Pro
+
+[open-u60-pro](https://github.com/jesther-ai/open-u60-pro?utm_source=chatgpt.com) has 90 stars and 26 forks. It combines a Rust agent running on the device with native mobile and web companions, targeting a particular ZTE 5G router. The project reports coverage of 143 API endpoints.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+Verdict: broader engineering scope than a dashboard userscript, but it targets a different hardware model and is not an apples-to-apples competitor. A larger architecture also does not automatically mean greater reliability.
+
+## 3. My quality scorecard for BroTech
+
+These grades are my assessment of the publicly documented projects, not measured benchmark results.
+
+| Dimension                            | Grade          | Reason                                                                                                                         |
+| ------------------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Feature depth for traffic monitoring | A              | Multiple traffic sources, ratios, per-device breakdowns, historical accounting and visualizations                              |
+| Practical user experience            | A−             | Reduces the need to navigate multiple router pages; supports browser-based installation                                        |
+| Popularity in its niche              | A              | 151 GitHub stars and approximately 2,900 ScriptCat installations                                                               |
+| Compatibility assurance              | B−             | The project reports verified devices, but router-model and firmware combinations remain important                              |
+| Engineering assurance                | B− / uncertain | The public repository has 269 commits and extensive documentation, but commit count alone is not proof of tests or correctness |
+| Ease of third-party reuse            | C+             | The custom attribution and other nonstandard licensing conditions may complicate redistribution                                |
+
+The supporting repository records document the features and activity, while ScriptCat lists the installation and license details. The grades themselves are my judgment.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+The final two grades deserve some explanation. `ZTE-Stat_Max` exposes no obvious dedicated test directory in its root listing, unlike the two Home Assistant projects above. That is a weaker visible testing signal—not proof that no tests exist or that the code is poor. Also, ScriptCat displays custom attribution and noncommercial-related license terms, which may make reuse less convenient than software released under a familiar permissive license.
+
+![](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++3
+
+## 4. Overall rank: where does BroTech stand?
+
+## ZTE web-dashboard enhancement
+
+My estimated rank: top tier; likely among the top 1–3 projects in the directly comparable set I found.
+
+# A−
+
+## ZTE Home Assistant integration
+
+More specialized, smaller audience, and behind several alternatives in repository popularity.
+
+# B
+
+## Overall engineering quality
+
+Promising, but independent code review, automated testing evidence and real-device validation would be needed for a stronger conclusion.
+
+# B+
+
+My bottom line: BroTech looks like a capable, product-focused independent developer with a particularly strong idea in router traffic visualization. His work competes well on usability, feature specialization, and community interest. The evidence is not yet sufficient to claim his software is more reliable than the better-tested Home Assistant alternatives.
+
+One important distinction: I reviewed public project documentation and repository signals; I did not run the software against physical ZTE hardware or independently reproduce its traffic-accuracy claims.
